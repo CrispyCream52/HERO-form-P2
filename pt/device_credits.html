@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÉDITOS-B</title>
+    <link rel="stylesheet" href="../css/redacted.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <div class="centered">
+        <a id="btn" class="obtain_btn fade-credits enabled-snd" href="device_index.html">Voltar</a>
+        <video id="credits">
+            <source src="../videos/w_credits-ptbr.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        document.addEventListener('click', function() {
+            const credits = document.getElementById("credits");
+            const return_btn = document.getElementById("btn");
+            credits.muted = true;
+
+            setTimeout(() => {
+                credits.play();
+                credits.muted = false;
+            }, 1000);
+            
+            setTimeout(() => {
+                return_btn.classList.add('fadein');
+                return_btn.style.zIndex = '1';
+            }, 102000);
+        }, { once: true });
+    </script>
+    <script src="../scripts/sounds.js"></script>
+</body>
+</html>

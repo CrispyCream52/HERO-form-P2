@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE</title>
+    <link rel="stylesheet" href="css/redacted.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body class="shelter-bg">
+    <div class="centered" onclick="shelter()">
+        <img src="images/shelter.png" id="shelter" class="fade-screen">
+    </div>
+    <div class="roots fade-screen">
+        <img src="images/roots.png" id="left_roots">
+        <img src="images/roots.png" id="right_roots">
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const walk = new Audio("sounds/snd_escaped.wav");
+            const crickets = new Audio("sounds/crickets.mp3");
+            crickets.volume = 0.05;
+            walk.volume = 0.5;
+            const fades = document.querySelectorAll('.fade-screen');
+            fades.forEach(fade => {
+                fade.classList.add('fadein');
+            });
+            
+            crickets.play();
+            crickets.loop = true;
+            walk.play();
+        });
+
+        function shelter() {
+            const shelter = document.getElementById('shelter');
+            const knock = new Audio("sounds/snd_knock.wav");
+            const door_opening = new Audio("sounds/mus_dooropen.ogg");
+            const door_closing = new Audio("sounds/mus_doorclose.ogg");
+            knock.volume = 0.3;
+            door_opening.volume = 0.3;
+            door_closing.volume = 0.3;
+            
+            
+            if(shelter.src.endsWith('images/shelter.png')) {
+                knock.play();
+                setTimeout(() => {
+                    setTimeout(() => {
+                        shelter.src = 'images/shelter0.png';
+                        door_opening.play();
+                    }, 2000);
+
+                    setTimeout(() => {
+                        shelter.src = 'images/shelter1.png';
+
+                        setTimeout(() => {
+                            shelter.src = 'images/shelter2.png';
+                        }, 2000);
+                    }, 3000);
+                }, 3666);
+            } else {
+                shelter.src = 'images/shelter.png';
+                door_closing.play();
+            }
+        }
+    </script>
+</body>
+</html>

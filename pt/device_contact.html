@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="device_index.html" class="nav_link">Inicio</a></li>
+            <li class="m-opt enabled-snd"><a href="device_oc.html" class="nav_link">Personagens</a></li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Contato</li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="device_index.html" class="nav_link"><li class="enabled-snd">Início</li></a>
+            <a href="device_oc.html" class="nav_link"><li class="enabled-snd">Personagens</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Contato</li>
+        </ul>
+    </div> 
+
+    <main class="credits">
+    <article class="credits_txtsegment" style="margin-bottom: 16%;">
+        <p class="c_txt_topics">CONTATOS</p>
+        
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="KEY: ENTRY_17"></a>
+            <a class="obtain_btn enabled-snd"></a>
+            <a class="obtain_btn enabled-snd"href="KEY: GLACEIR"></a>
+            <a class="obtain_btn enabled-snd"></a>
+            <a class="obtain_btn enabled-snd"></a>
+        </div>
+
+        <p class="c_txt_topics" style="margin-bottom: 5%;">CREDITOS</p>
+        <table id="table-credits" class="credits-text">
+            <tr>
+                <td>DELTARUNE por</td>
+                <td>W.D. ██████</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">PROJETO</td></tr>
+            <tr>
+                <td>Projeto Não-oficial</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Direção & Idealização</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Localização em Inglês</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">DIREÇÃO ARTÍSTICA</td></tr>
+            <tr>
+                <td>Artista & Ilustrador</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Artista Conceitual</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Design de Personagens</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Personagens Originais</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Assets 2D & Sprites</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Inspiração dos Sprites</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">DESENVOLVIMENTO</td></tr>
+            <tr>
+                <td>Programador (back & front-end)</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>Desenvolvedor UX/UI</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">FONTES</td></tr>
+            <tr>
+                <td>"DETERMINATION Sans"</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>"DotumChe Pixel"</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>"Crypt of Tomorrow"</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>"TENNA GLYPHS"</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>"PROPHECY TYPE"</td>
+                <td>[REDATADO]</td>
+            </tr>
+            <tr>
+                <td>"DELTARUNE"</td>
+                <td>[REDATADO]</td>
+            </tr>
+        </table>
+        <p id="p-credits" class="credits-text">
+            DELTARUNE por - W.D. ██████<br>
+        </p>
+        <p id="p-credits" class="credits-text">
+            PROJETO<br>
+            Projeto Não-oficial - [REDATADO]<br>
+            Direção & Idealização - [REDATADO]<br>
+            Localização em Inglês - [REDATADO]
+        </p>
+        <p id="p-credits" class="credits-text">
+            DIREÇÃO ARTÍSTICA<br>
+            Artista & Ilustrador - [REDATADO]<br>
+            Artista Conceitual - [REDATADO]<br>
+            Design de Personagens - [REDATADO]<br>
+            Personagens Originais - [REDATADO]<br>
+            Assets 2D & Sprites - [REDATADO]<br>
+            Inspiração dos Sprites - [REDATADO]
+        </p>
+        <p id="p-credits" class="credits-text">
+            DESENVOLVIMENTO<br>
+            Programador (back & front-end) - [REDATADO]<br>
+            Desenvolvedor UX/UI - [REDATADO]
+        </p>
+        <p id="p-credits" class="credits-text">
+            FONTES<br>
+            "DETERMINATION Sans" - [REDATADO]<br>
+            "DotumChe Pixel" - [REDATADO]<br>
+            "Crypt of Tomorrow" - [REDATADO]<br>
+            "TENNA GLYPHS" - [REDATADO]<br>
+            "PROPHECY TYPE" - [REDATADO]<br>
+            "DELTARUNE" - [REDATADO]
+        </p>
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="device_credits.html">_CREDITOS</a>
+        </div>
+    </article>
+    </main>
+    <img src="../images/lostgirl.png" alt="[REDACTED]" id="redacted" style="visibility: hidden;">
+    <hr>
+    <footer>
+        <p id="footer-txt">KEY: SHELTER</p>
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

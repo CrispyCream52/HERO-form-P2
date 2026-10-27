@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Inicio</li>
+            <li class="m-opt enabled-snd"><a href="device_oc.html" class="nav_link">Personagens</a></li>
+            <li class="m-opt enabled-snd"><a href="device_contact.html" class="nav_link">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <li class="disabled-snd selected-opt-mobile">* Início</li>
+            <a href="device_oc.html" class="nav_link"><li class="enabled-snd">Personagens</li></a>
+            <a href="device_contact.html" class="nav_link"><li class="enabled-snd">Contato</li></a>
+        </ul>
+    </div>
+
+    <main>
+    <img src="../images/DT-logo-soulless2.png" id="title">
+
+    <article class="c_txtsegment">
+        <p class="c_txt_topics">PREFACIO</p>
+        <p class="p_prophecy">A profecia, na qual fora sussurrada entre as sombras.<br>A lenda deste Mundo.</p>
+        <p class="p_prophecy" style="margin-top: 10%;">&lt;DELTARUNE.&gt;</p>
+        <img src="../images/deltarune-panel.png" alt="<DELTARUNE>" id="hero">
+        <p class="p_prophecy">Um mundo mergulhado em pura luz.<br>Abaixo, crescia uma eterna noite.</p>
+        <p class="p_prophecy">Se fontes fossem libertas, O Rugido ocorreria.<br>E titas se formariam de olhos escurecidos.</p>
+        <p class="p_prophecy">A luz e as trevas, ambos em desespero.<br>Uma contagem marcava para o fim da Terra.<br>Eis que, em esperancas arruinadas eles enviam.
+        <br>Tres herois no fim do Mundo.</p>
+        <p class="p_prophecy" style="margin-top: 10%;">O primeiro heroi. A divina representacao do anjo.</p>
+        <img src="../images/hero-01-panel.png" alt="hero-01" id="hero">
+        <p class="p_prophecy">O segundo heroi. [REDATADO]</p>
+        <p class="p_prophecy">O terceiro heroi. [REDATADO]</p>
+        <p class="p_prophecy">O pecado original, tao profano ao derramar tal sangue.<br>Devera se encontrar contra o destino final dos herois.</p>
+        <p class="p_prophecy">Eles ouvirao o som dos ceus.<br>Eles verao a cauda do inferno rastejar-se.</p>
+        <p class="p_prophecy">E enfim. Quando toda a esperanca esta perdida para tal conto.<br>A tragedia final se apresenta.</p>
+        <p class="p_prophecy">Para salvar os mundos, ha somente um meio.</p>
+        <p class="p_prophecy">[REDATADO]</p>
+        <p class="p_prophecy">Somente entao os Mundos poderao respirar mais uma vez.</p>
+    </article>
+    <div class="pines">
+        <img src="../images/pine-trees.png" id="left_trees">
+        <img src="../images/tree_tail.png" id="right_trees">
+    </div>
+
+    <article>
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="../device_application.html">_APLICAÇÃO</a>
+        </div>
+    </article>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">POWERED BY ██████████</p>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

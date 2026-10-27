@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="index.html" class="nav_link">Home</a></li>
+            <li class="m-opt enabled-snd"><a href="characters.html" class="nav_link">Characters</a></li>
+            <li class="m-opt enabled-snd"><a href="gallery.html" class="nav_link">Gallery</a></li>
+            <li class="m-opt disabled-snd" style="color: #ffff00; cursor: default;">* Contact</li>
+            <li class="m-opt enabled-snd"><a class="nav_link theme-btn" onclick="Theme()">Dark</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="index.html" class="nav_link"><li class="enabled-snd">Home</li></a>
+            <a href="characters.html" class="nav_link"><li class="enabled-snd">Characters</li></a>
+            <a href="gallery.html" class="nav_link"><li class="enabled-snd">Gallery</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Contact</li>
+            <a class="nav_link theme-btn" onclick="Theme()"><li class="enabled-snd">Dark</li></a>
+        </ul>
+    </div>
+    
+    <main class="credits">
+    <article class="credits_txtsegment">
+        <p class="c_txt_topics">CONTACTS</p>
+        
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="https://www.youtube.com/@CrispyCream52" target="_blank"><img src="../images/youtube.png"></a>
+            <a class="obtain_btn enabled-snd" href="https://www.tumblr.com/blog/crispycream52" target="_blank"><img src="../images/tumblr.png"></a>
+            <a class="obtain_btn enabled-snd" href="https://cara.app/crispycream52" target="_blank">Cara.app</a>
+            <a class="obtain_btn enabled-snd" href="https://crispycream52.neocities.org" target="_blank">Neocities</a>
+            <a class="obtain_btn enabled-snd" href="https://x.com/CrispyK52" target="_blank"><img src="../images/x.png" style="height: 20px; width: auto;">/Twitter</a>
+            <a class="obtain_btn enabled-snd" href="https://github.com/CrispyCream52" target="_blank"><img src="../images/github.png"></a>
+        </div>
+
+        <div class="form-section">
+            <h1>SEND A MESSAGE</h1>
+            <form class="contact-form" target="_blank" action="mailto:ishigori.hondo@mail.com" method="post" enctype="text/plain">
+                <label for="name">Full name:</label><br>
+                <input type="text" class="form-field" name="name" id="name" placeholder="Your name."><br>
+                <label for="email">Email:</label><br>
+                <input type="email" class="form-field" name="email" id="email" placeholder="Your email."><br>
+                <label for="comment">Content:</label><br>
+                <textarea name="comment" id="comment" placeholder="Your message goes here." style="height: 200px;"></textarea><br>
+
+                <div class="form-btn-wrapper">
+                    <button type="submit" onclick="verify(event)" class="form-btn send-b enabled-snd">SEND</button>
+                    <button type="reset" class="form-btn clear-b enabled-snd">CLEAR</button>
+                </div>
+            </form>
+        </div>
+
+        <p class="c_txt_topics" style="margin-bottom: 5%;">CREDITS</p>
+        <table id="table-credits" class="credits-text">
+            <tr>
+                <td>DELTARUNE by</td>
+                <td>Toby Fox</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">PROJECT</td></tr>
+            <tr>
+                <td>Non-official Project</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>Direction & Idealization</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>English Localization</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">ARTISTIC DIRECTION</td></tr>
+            <tr>
+                <td>Artist & Illustrator</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>Concept Artist</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>Character Design</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>Original Characters</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>2D Assets & Sprites</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>Sprites Inspiration</td>
+                <td>Temmie Chang</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">DEVELOPMENT</td></tr>
+            <tr>
+                <td>Programmer (back & front-end)</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr>
+                <td>UX/UI Designer</td>
+                <td>Kenji Fugimura</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">FONTS</td></tr>
+            <tr>
+                <td>"DETERMINATION Sans"</td>
+                <td>Harry Wakamatsu</td>
+            </tr>
+            <tr>
+                <td>"DotumChe Pixel"</td>
+                <td>William Costello</td>
+            </tr>
+            <tr>
+                <td>"Crypt of Tomorrow"</td>
+                <td>MrDiman</td>
+            </tr>
+            <tr>
+                <td>"TENNA GLYPHS"</td>
+                <td>RelevantAd2788</td>
+            </tr>
+            <tr>
+                <td>"PROPHECY TYPE"</td>
+                <td>RelevantAd2788</td>
+            </tr>
+            <tr>
+                <td>"DELTARUNE"</td>
+                <td>ColorSwitchFan25</td>
+            </tr>
+        </table>
+        <p id="p-credits" class="credits-text">
+            DELTARUNE by - Toby Fox<br>
+        </p>
+        <p id="p-credits" class="credits-text">
+            PROJECT<br>
+            Non-official Project - Kenji Fugimura<br>
+            Direction & Idealization - Kenji Fugimura<br>
+            English Localization - Kenji Fugimura
+        </p>
+        <p id="p-credits" class="credits-text">
+            ARTISTIC DIRECTION<br>
+            Artist & Illustrator - Kenji Fugimura<br>
+            Concept Artist - Kenji Fugimura<br>
+            Character Design - Kenji Fugimura<br>
+            Original Characters - Kenji Fugimura<br>
+            2D Assets & Sprites - Kenji Fugimura<br>
+            Sprites Inspiration - Temmie Chang
+        </p>
+        <p id="p-credits" class="credits-text">
+            DEVELOPMENT<br>
+            Programmerr (back & front-end) - Kenji Fugimura<br>
+            UX/UI Developer - Kenji Fugimura
+        </p>
+        <p id="p-credits" class="credits-text">
+            FONTS<br>
+            "DETERMINATION Sans" - Harry Wakamatsu<br>
+            "DotumChe Pixel" - William Costello<br>
+            "Crypt of Tomorrow" - MrDiman<br>
+            "TENNA GLYPHS" - RelevantAd2788<br>
+            "PROPHECY TYPE" - RelevantAd2788<br>
+            "DELTARUNE" - ColorSwitchFan25
+        </p>
+
+        <div class="buttons" style="margin-bottom: 35%;">
+            <a class="obtain_btn enabled-snd" href="credits.html">View Credits</a>
+        </div>
+    </article>
+    </main>
+    <img src="../images/lostgirl.png" id="redacted">
+    <hr>
+    <footer>
+        <p id="footer-txt">Fugimura Kenji, 2026 - All the rights reserved.</p>
+    </footer>
+    <script>
+        function verify(){
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let comment = document.querySelector("#comment").value;
+
+            /*console.log("Nome:", name);
+            console.log("Email:", email);
+            console.log("Mensagem:", comment);*/
+
+            if(name.trim() === "" || email.trim() === "" || comment.trim() === ""){
+                alert("Fill all the fields.");
+                event.preventDefault();
+            }
+            else if(!emailFormat.test(email)){
+                alert("Use a valid email.");
+                event.preventDefault();
+            }
+        }
+    </script>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

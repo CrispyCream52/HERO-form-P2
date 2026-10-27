@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    image-rendering: pixelated;
+}
+
+@font-face {
+    font-family: 'dtm-sans';
+    src: url('../fonts/DTM-Sans.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'deltarune';
+    src: url('../fonts/deltarune.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'jf14';
+    src: url('../fonts/jf14-regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tenna-glyphs';
+    src: url('../fonts/TENNAGLYPHS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'prophecy-type';
+    src: url('../fonts/PROPHECYTYPE.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'coft';
+    src: url('../fonts/coft.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dotumche-px';
+    src: url('../fonts/dotumche-pixel.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#hidden {
+    font-family: 'tenna-glyphs';
+    color: black;
+    width: 50%;
+    text-align: justify;
+}
+#hidden-small {
+    font-family: 'tenna-glyphs';
+    font-size: 10px;
+    color: #2A2A72;
+    width: 100%;
+    text-align: justify;
+}
+
+#lostgirl {
+    image-rendering: pixelated;
+    height: 80px;
+    width: auto;
+}
+
+#os_title {
+    font-family: 'prophecy-type';
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+#os_field {
+    font-family: 'tenna-glyphs';
+    color: black;
+    font-size: 10px;
+    border: 3px white solid;
+}
+
+#os_btn {
+    border: 0px;
+    font-family: 'tenna-glyphs';
+    color: white;
+    font-size: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#os_error {
+    font-family: 'tenna-glyphs';
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    top: 55%;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 90s ease-in-out;
+}
+.fadein {
+    opacity: 1;
+}

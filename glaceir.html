@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Blazers 2</title>
+    <link rel="stylesheet" href="css/redacted.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="centered" onclick="laugh()">
+    <img src="images/friend_smile.png" id="friend" style="width: 50px; height: auto; opacity: 0.6;">
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const glaceir = new Audio("music/GLACEIR.mp3");
+            glaceir.volume = 0.8;
+            
+            glaceir.play();
+        });
+
+        function laugh(){
+            const laugh = new Audio("sounds/snd_crowd_laugh.wav");
+            laugh.play();
+            const friend = document.getElementById('friend');
+            friend.src = 'images/friend-h_anim.gif';
+            setTimeout(() => {
+                window.location.href = "en/index.html";
+            }, 2666);
+            
+        }
+    </script>
+</body>
+</html>

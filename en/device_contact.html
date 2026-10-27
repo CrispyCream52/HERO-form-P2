@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="device_index.html" class="nav_link">Home</a></li>
+            <li class="m-opt enabled-snd"><a href="device_oc.html" class="nav_link">Characters</a></li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Contact</li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="device_index.html" class="nav_link"><li class="enabled-snd">Home</li></a>
+            <a href="device_oc.html" class="nav_link"><li class="enabled-snd">Characters</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Contact</li>
+        </ul>
+    </div>
+
+    <main class="credits">
+    <article class="credits_txtsegment" style="margin-bottom: 16%;">
+        <p class="c_txt_topics">CONTACTS</p>
+        
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="KEY: ENTRY_17"></a>
+            <a class="obtain_btn enabled-snd"></a>
+            <a class="obtain_btn enabled-snd" href="KEY: GLACEIR"></a>
+            <a class="obtain_btn enabled-snd"></a>
+            <a class="obtain_btn enabled-snd"></a>
+        </div>
+
+        <p class="c_txt_topics" style="margin-bottom: 5%;">CREDITS</p>
+        <table id="table-credits" class="credits-text">
+            <tr>
+                <td>DELTARUNE by</td>
+                <td>W.D. ██████</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">PROJECT</td></tr>
+            <tr>
+                <td>Non-official Project</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>Direction & Idealization</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>English Localization</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">ARTISTIC DIRECTION</td></tr>
+            <tr>
+                <td>Artist & Illustrator</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>Concept Artist</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>Character Design</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>Original Characters</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>2D Assets & Sprites</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>Sprites Inspiration</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">DEVELOPMENT</td></tr>
+            <tr>
+                <td>Programmer (back & front-end)</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>UX/UI Designer</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;">FONTS</td></tr>
+            <tr>
+                <td>"DETERMINATION Sans"</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>"DotumChe Pixel"</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>"Crypt of Tomorrow"</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>"TENNA GLYPHS"</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>"PROPHECY TYPE"</td>
+                <td>[REDACTED]</td>
+            </tr>
+            <tr>
+                <td>"DELTARUNE"</td>
+                <td>[REDACTED]</td>
+            </tr>
+        </table>
+        <p id="p-credits" class="credits-text">
+            DELTARUNE by - W.D. ██████<br>
+        </p>
+        <p id="p-credits" class="credits-text">
+            PROJECT<br>
+            Non-official Project - [REDACTED]<br>
+            Direction & Idealization - [REDACTED]<br>
+            English Localization - [REDACTED]
+        </p>
+        <p id="p-credits" class="credits-text">
+            ARTISTIC DIRECTION<br>
+            Artist & Illustrator - [REDACTED]<br>
+            Concept Artist - [REDACTED]<br>
+            Character Design - [REDACTED]<br>
+            Original Characters - [REDACTED]<br>
+            2D Assets & Sprites - [REDACTED]<br>
+            Sprites Inspiration - [REDACTED]
+        </p>
+        <p id="p-credits" class="credits-text">
+            DEVELOPMENT<br>
+            Programmerr (back & front-end) - [REDACTED]<br>
+            UX/UI Developer - [REDACTED]
+        </p>
+        <p id="p-credits" class="credits-text">
+            FONTS<br>
+            "DETERMINATION Sans" - [REDACTED]<br>
+            "DotumChe Pixel" - [REDACTED]<br>
+            "Crypt of Tomorrow" - [REDACTED]<br>
+            "TENNA GLYPHS" - [REDACTED]<br>
+            "PROPHECY TYPE" - [REDACTED]<br>
+            "DELTARUNE" - [REDACTED]
+        </p>
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="device_credits.html">_CREDITS</a>
+        </div>
+    </article>
+    </main>
+    <img src="../images/lostgirl.png" alt="[REDACTED]" id="redacted" style="visibility: hidden;">
+    <hr>
+    <footer>
+        <p id="footer-txt">KEY: SHELTER</p>
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

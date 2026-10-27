@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS</title>
+    <link rel="stylesheet" href="css/D_OS.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <form id="os_form">
+        <p id="os_title">OPERATIONAL SYSTEM</p>
+        <input type="text" id="os_field" placeholder="<INSERT KEY>" autocomplete="off">
+        <button type="submit" id="os_btn" onclick="OSkey()">SEND</button>
+        <p id="os_error" hidden></p>
+    </form>
+
+    <script>
+        function OSkey(){
+            const os_form = document.getElementById("os_form");
+            const os_field = document.getElementById("os_field");
+            const os_error = document.getElementById("os_error");
+
+            const os_keys = {
+                "GLACEIR": "glaceir.html",
+                "ICE-PALACE": "glaceir.html",
+                "SORRY": "sorry.html",
+                "GASTER": "666666",
+                "ENTRY-17": "entry-17.html",
+                "SHELTER": "shelter.html",
+                "NIGHTMARE": "nightmare.html",
+                "0915199X": "disease.html"
+            }
+            
+            os_form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const key_value = os_field.value;
+                const path = os_keys[key_value];
+
+                if(path){
+                    window.location.href = path;
+                }
+                else {
+                    os_error.textContent = 'ERROR__: KEY NOT FOUND';
+                    os_error.hidden = false
+                }
+            });
+
+            
+
+            
+            
+        }
+    </script>
+</body>
+</html>

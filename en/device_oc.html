@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class="enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="device_index.html" class="nav_link">Home</a></li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Characters</li>
+            <li class="m-opt enabled-snd"><a href="device_contact.html" class="nav_link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="device_index.html" class="nav_link"><li class="enabled-snd">Home</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Characters</li>
+            <a href="device_contact.html" class="nav_link"><li class="enabled-snd">Contact</li></a>
+        </ul>
+    </div>
+
+    <p class="txt_topics" style="text-align: center; margin: 30px 0 80px 0;">CHARACTERS</p>
+    
+    <main id="character-selector">
+        <article>
+            <div class="character-card enabled-snd">
+                <a href="device_E-RAM.html">
+                <div class="characters">
+                    <img src="../images/ERAM box - clean.png">
+                </div>
+                <div class="characters-info">
+                    <p class="txt_char-title">UNKNOWN</p>
+                    <p class="txt_char-desc">by [REDACTED]</p>
+                </div>
+                </a>
+            </div>
+        </article>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">POWERED BY ██████████</p>
+    </footer>
+    <script>
+        window.addEventListener("load", () => {
+            const snd = new Audio('../sounds/ocean.mp3');
+            const interval = 5000;
+            snd.volume = 0.5;
+
+            setInterval(() => {
+                snd.play();
+            }, interval);
+        });
+    </script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

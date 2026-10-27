@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+.shelter-bg {
+    background-color: #070108;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    image-rendering: pixelated;
+}
+
+video {
+    width: 400px;
+    height: auto;
+    image-rendering: pixelated;
+    pointer-events: none;
+    position: fixed;
+}
+
+@font-face {
+    font-family: 'dtm-sans';
+    src: url('../fonts/DTM-Sans.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'deltarune';
+    src: url('../fonts/deltarune.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'jf14';
+    src: url('../fonts/jf14-regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tenna-glyphs';
+    src: url('../fonts/TENNAGLYPHS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'prophecy-type';
+    src: url('../fonts/PROPHECYTYPE.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'coft';
+    src: url('../fonts/coft.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dotumche-px';
+    src: url('../fonts/dotumche-pixel.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'wingding';
+    src: url(../fonts/wingdings.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#btn {
+    z-index: -1;
+}
+.obtain_btn {
+    font-family: 'dtm-sans';
+    text-decoration: none;
+    font-size: 20px;
+    width: 140px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: 20px 10px 20px 10px;
+    transition: 0.2s;
+}
+.obtain_btn:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    border-color: #ffff00;
+}
+
+#hidden {
+    font-family: 'tenna-glyphs';
+    color: black;
+    width: 50%;
+    text-align: justify;
+}
+#hidden-small {
+    font-family: 'tenna-glyphs';
+    font-size: 10px;
+    color: #2A2A72;
+    width: 100%;
+    text-align: justify;
+}
+#dialogue {
+    width: 300px;
+}
+#entry {
+    font-family: 'wingding';
+    color: white;
+    line-height: 180%;
+}
+
+#lostgirl {
+    image-rendering: pixelated;
+    height: 80px;
+    width: auto;
+}
+#lostgirl-ab {
+    image-rendering: pixelated;
+    position: absolute;
+    top: 100%;
+    height: 90px;
+    width: auto;
+    z-index: 1;
+}
+#ERAM {
+    image-rendering: pixelated;
+    position: absolute;
+    top: 0%;
+    height: 60px;
+    width: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+}
+.btn {
+    font-family: 'tenna-glyphs';
+    font-size: 10px;
+    text-decoration: none;
+    color: blue;
+}
+.hidden-btn {
+    display: none;
+    position: absolute;
+}
+.ERAM-walk01 {
+    animation: ERAMwalkdown 10s ease-out forwards;
+}
+
+@keyframes ERAMwalkdown {
+    from {
+        top: 0%;
+    }
+    to {
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+.walk-in {
+    animation: dess-arrive 10s ease-out forwards;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+#hidden-credits {
+    display: none;
+}
+
+#shelter {
+    width: 300px;
+    height: auto;
+}
+.roots {
+    position: absolute;
+    top: 0%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.roots img {
+    width: 15%;
+    height: auto;
+    image-rendering: pixelated
+}
+#left_roots {
+    transform: scaleX(-1);
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 90s ease-in-out;
+}
+.fade-screen {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.fade-credits {
+    opacity: 0;
+    transition: opacity 10s ease-in-out;
+}
+.fadein {
+    opacity: 1;
+}
+
+.mystery {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated;
+    width: 4em;
+    height: auto;
+    mix-blend-mode: exclusion;
+    z-index: 1;
+}
+
+.moving-pattern {
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    image-rendering: pixelated;
+    background: url("../images/mantle-pattern.png") repeat;
+    background-size: 9vw;
+    background-position: 0 0;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.moving-pattern::after {
+    content: '';
+    position: absolute;
+    filter: brightness(1.6);
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: inherit;
+    visibility: visible;
+    mix-blend-mode: exclusion;
+    image-rendering: pixelated;
+    background-size: inherit;
+    animation: 
+        moveBackground 9s linear infinite, 
+        wave 6s ease-in-out infinite alternate;
+}
+
+.pulsing {
+    animation: pulsingRed 2s linear infinite alternate-reverse;
+}
+@keyframes pulsingRed {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: rgb(7, 0, 12);
+    }
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 9vw 9vw; 
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1) skewX(-1deg) rotate(-1deg);
+    }
+    50% {
+        transform: scale(1.01) skewX(1deg) rotate(1deg);
+    }
+    100% {
+        transform: scale(1) skewX(-1deg) rotate(-1deg);
+    }
+}
+
+@keyframes dess-arrive {
+    from {
+        top: 100%;
+    }
+    to {
+        top: 65%;
+    }
+}

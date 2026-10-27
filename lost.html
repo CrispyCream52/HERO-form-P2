@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>come back, please.</title>
+    <link rel="stylesheet" href="css/redacted.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+
+    <div class="centered">
+    <img src="images/breakdown.png" alt="it's all my fault." id="lostgirl" class="fade">
+    <p id="hidden-small" class="fade">will she ever come back?</p>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const chord = new Audio("music/the-distance-between-two.mp3");
+            const her = document.querySelector("#lostgirl");
+            const text = document.querySelector("#hidden-small")
+
+            setTimeout(() => {
+                her.classList.add('fadein');
+                text.classList.add('fadein');
+            }, 4000);
+            chord.volume = 0.2;
+            chord.loop = true;
+            chord.play();
+        });
+    </script>
+</body>
+</html>

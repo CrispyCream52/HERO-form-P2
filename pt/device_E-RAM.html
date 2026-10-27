@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEY: NIGHTMARE</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="device_index.html" class="nav_link">Inicio</a></li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Personagens</li>
+            <li class="m-opt enabled-snd"><a href="device_contact.html" class="nav_link">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="device_index.html" class="nav_link"><li class="enabled-snd">Início</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Personagens</li>
+            <a href="device_contact.html" class="nav_link"><li class="enabled-snd">Contato</li></a>
+        </ul>
+    </div>
+
+    <main>
+    <div class="buttons">
+        <button class="obtain_btn enabled-snd" onclick="window.location.href = 'device_oc.html'">&lt;&lt; VOLTE</button>
+    </div>
+    <div class="oc_container">
+        <div class="oc-top">
+            <div class="left_menu">
+                <article class="menu-p1">
+                <table id="menu-status-big">
+                    <tr>
+                        <td class="marked-ram">E-RAM</td>
+                    </tr>
+                </table>
+                <table id="menu-status">
+                    <tr id="marked-red">
+                        <td id="menu-text">lv</td>
+                        <td id="menu-text">666</td>
+                    </tr>
+                    <tr id="marked-red">
+                        <td id="menu-text">hp</td>  
+                        <td id="menu-text">666/666</td>  
+                    </tr>
+                    <tr>
+                        <td id="menu-text">D$</td>
+                        <td id="menu-text">----</td>
+                    </tr>
+                </table>
+                </article>
+
+                <article class="menu-p2">
+                    <ul>
+                        <li><a class="menu-status-opt-disabled disabled-snd">ITEM</a></li>
+                        <li><a class="menu-status-opt-disabled disabled-snd">STAT</a></li>
+                        <li><a onclick="smile()" class="menu-status-opt enabled-snd">CELL</a></li>
+                    </ul>
+                </article>
+            </div> 
+        </div>
+        <img src="../images/ERAM fb.png" id="paige-fullbody">
+        <div class="right_menu">
+            <article class="menu-p3">
+            <p id="menu-status-big" style="margin-bottom: 30px;" class="marked-ram">"E-RAM"</p>
+            <table id="menu-status-big" style="margin-bottom: 30px;">
+                <tr id="marked-red">
+                    <td>LV</td>
+                    <td>666</td>
+                </tr>
+                <tr id="marked-red">
+                    <td>HP</td>
+                    <td>666 / 666</td>
+                </tr>
+            </table>
+
+            <div class="inline-status-pc" style="margin-bottom: 30px;">
+            <table id="menu-status-big">
+                <tr>
+                    <td>AT</td>
+                    <td>16(6)</td>
+                </tr>
+                <tr>
+                    <td>DF</td>
+                    <td>26(16)</td>
+                </tr>
+            </table>
+            <table id="menu-status-big" class="left-side">
+                <tr>
+                    <td id="marked-red">EXP: 66</td>
+                </tr>
+                <tr>
+                    <td>NEXT: 4</td>
+                </tr>
+            </table>
+            </div>
+
+            <table id="menu-status-big" style="margin-bottom: 20px;">
+                <tr>
+                    <td>WEAPON:</td>
+                    <td><mark id="marked-dark">DuskRapier</mark></td>
+                </tr>
+                <tr>
+                    <td>ARMOR:</td>
+                    <td><mark id="marked-dark">ShadowMantle</mark></td>
+                </tr>
+                <tr>
+                    <td>ELEMENT:</td>
+                    <td><mark id="marked-dark">Dark / Star</mark></td>
+                </tr>
+            </table>
+            <p id="menu-status-big">MONEY: ----</p>
+            </article>
+            
+        </div>
+    </div>
+
+        <img src="../images/ERAM fb.png" id="paige-fullbody-mobile">
+        <div id="dialogue-box" class="mobile-menu" style="margin-bottom: 15px;">
+            <article class="menu-padding">
+            <p class="menu-status-big-mobile" style="margin-bottom: 30px;">"Paige"</p>
+            <table class="menu-status-big-mobile" style="margin-bottom: 30px;">
+                <tr id="marked-red">
+                    <td>LV</td>
+                    <td>666</td>
+                </tr>
+                <tr id="marked-red">
+                    <td>HP</td>
+                    <td>666 / 666</td>
+                </tr>
+            </table>
+
+            <div class="inline-status" style="margin-bottom: 30px;">
+                <table class="menu-status-big-mobile">
+                <tr>
+                    <td>AT</td>
+                    <td>16(6)</td>
+                </tr>
+                <tr>
+                    <td>DF</td>
+                    <td>26(6)</td>
+                </tr>
+                </table>
+                <table class="left-side menu-status-big-mobile">
+                    <tr>
+                        <td id="marked-red">EXP: 66</td>
+                    </tr>
+                    <tr>
+                        <td>NEXT: 4</td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="inline-status-mobile menu-status-big-mobile" style="margin-bottom: 30px;">
+                <tr>
+                    <td>AT 16(6)</td>
+                    <td>DF 26(6)</td>
+                </tr>
+                <tr>
+                    <td id="marked-red">EXP: 66</td>
+                    <td>NEXT: 4</td>
+                </tr>
+            </table>
+
+            <table class="menu-status-big-mobile" style="margin-bottom: 20px;">
+                <tr>
+                    <td>WEAPON:</td>
+                    <td><mark id="marked-dark">DuskRapier</mark></td>
+                </tr>
+                <tr>
+                    <td>ARMOR:</td>
+                    <td><mark id="marked-dark">ShadowMantle</mark></td>
+                </tr>
+                <tr>
+                    <td>ELEMENT:</td>
+                    <td><mark id="marked-dark">Dark / Star</mark></td>
+                </tr>
+            </table>
+            <p class="menu-status-big-mobile" style="margin-bottom: 30px;">MONEY: ----</p>
+            </article>
+        </div>
+
+    <div id="dialogue-box">
+    <article class="txtsegment-dialogue" id="about-padding">
+        <p class="txt_topics-dialogue">SOBRE ELE</p>
+        <p class="p_text-dialogue">
+            Muito bem, de alguma forma <marked id="marked-red">você</marked> conseguiu acessar essa parte. 
+            Parabéns... Infelizmente, não restou mais nada dos meus dados pessoais, me livrei de uma vez. 
+            Você está uns passos atrás, tolo. <br>
+            Esse é <marked id="marked-red">MEU DOMÍNIO, MEU MUNDO.</marked>
+        </p>    
+    </article>
+    <img src="../images/nothing.png" id="portrait-icon">
+    </div>
+
+    <div id="dialogue-box" style="padding-bottom: 5%; margin-top: 15px; margin-bottom: 5%;">
+    <article class="txtsegment-dialogue">
+        <p class="txt_topics-dialogue">OUTROS DETALHES</p>
+        <table class="p_text-dialogue" id="about-table-pc">
+            <tr>
+                <td>RAÇA:</td>
+            </tr>
+            <tr>
+                <td>IDADE:</td>
+            </tr>
+            <tr>
+                <td>ORIGEM:</td>
+            </tr>
+            <tr>
+                <td>ENDEREÇO:</td>
+            </tr>
+            <tr>
+                <td>ALTURA:</td>
+            </tr>
+            <tr>
+                <td>PESO:</td>
+            </tr>
+            <tr>
+                <td>PARADEIRO:</td>
+            </tr>
+            <tr>
+                <td>TEL.:</td>
+            </tr>
+            <tr>
+                <td>DATA/HORA:</td>
+            </tr>
+        </table>
+        <table class="p_text-dialogue" id="about-table-mobile">
+            <tr>
+                <td>RAÇA:</td>
+            </tr>
+            <tr>
+                <td>IDADE:</td>
+            </tr>
+            <tr>
+                <td>ORIGEM:</td>
+            </tr>
+            <tr>
+                <td>ENDEREÇO:</td>
+            </tr>
+            <tr>
+                <td>ALTURA:</td>
+            </tr>
+            <tr>
+                <td>PESO:</td>
+            </tr>
+            <tr>
+                <td>PARADEIRO:</td>
+            </tr>
+            <tr>
+                <td>TEL.:</td>
+            </tr>
+            <tr>
+                <td>DATA/HORA:</td>
+            </tr>
+        </table>
+    </article>
+    </div>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">POWERED BY ██████████</p>
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paige</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    <audio src="../sounds/snd_power.wav" id="exp-snd"></audio>
+    <audio src="../sounds/snd_levelup.wav" id="lvlup-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="index.html" class="nav_link">Inicio</a></li>
+            <li class="m-opt disabled-snd" style="color: #ffff00; cursor: default;">* Personagens</li>
+            <li class="m-opt enabled-snd"><a href="gallery.html" class="nav_link">Galeria</a></li>
+            <li class="m-opt enabled-snd"><a href="contact.html" class="nav_link">Contato</a></li>
+            <li class="m-opt enabled-snd"><a class="nav_link theme-btn" onclick="Theme()">Dark</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="index.html" class="nav_link"><li class="enabled-snd">Início</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Personagens</li>
+            <a href="gallery.html" class="nav_link"><li class="enabled-snd">Galeria</li></a>
+            <a href="contact.html" class="nav_link"><li class="enabled-snd">Contato</li></a>
+            <a class="nav_link theme-btn" onclick="Theme()"><li class="enabled-snd">Dark</li></a>
+        </ul>
+    </div>
+
+    <main>
+    <div class="buttons">
+        <button class="obtain_btn enabled-snd" onclick="window.location.href = 'characters.html'">&lt;&lt; VOLTAR</button>
+    </div>
+    <div class="oc_container">
+        <div class="left_menu">
+            <article class="menu-p1">
+            <table id="menu-status-big">
+                <tr>
+                    <td>Paige</td></td>
+                </tr>
+            </table>
+            <table id="menu-status">
+                <tr>
+                    <td id="menu-text">lv</td>
+                    <td id="menu-text" class="scurrent-lvl-display">4</td>
+                </tr>
+                <tr>
+                    <td id="menu-text">hp</td>  
+                    <td id="menu-text">45/45</td>  
+                </tr>
+                <tr>
+                    <td id="menu-text">D$</td>
+                    <td id="menu-text">1225</td>
+                </tr>
+            </table>
+            </article>
+
+            <article class="menu-p2">
+                <ul>
+                    <li><a onclick="Items()" id="item-btn" class="menu-status-opt enabled-snd">ITEM</a></li>
+                    <li><a onclick="Stats()" id="stats-btn" class="menu-status-opt enabled-snd">STAT</a></li>
+                    <li><a onclick="garbageNoise()" class="menu-status-opt enabled-snd">CELL</a></li>
+                </ul>
+            </article>
+        </div> 
+        <img src="../images/paige fb.png" id="paige-fullbody">
+        <div class="right_menu">
+            <article class="menu-p3 stats-menu">
+                <p id="menu-status-big" style="margin-bottom: 30px;">"Paige"</p>
+                <table id="menu-status-big" style="margin-bottom: 30px;">
+                    <tr>
+                        <td>LV</td>
+                        <td class="scurrent-lvl-display">4</td>
+                    </tr>
+                    <tr>
+                        <td>HP</td>
+                        <td>45 / 45</td>
+                    </tr>
+                </table>
+
+                <div class="inline-status-pc" style="margin-bottom: 30px;">
+                <table id="menu-status-big">
+                    <tr>
+                        <td>AT</td>
+                        <td>12(4)</td>
+                    </tr>
+                    <tr>
+                        <td>DF</td>
+                        <td>23(11)</td>
+                    </tr>
+                </table>
+                <table id="menu-status-big" class="left-side">
+                    <tr>
+                        <td class="current-exp-display">EXP: 37</td>
+                    </tr>
+                    <tr>
+                        <td class="next-lvl-display">NEXT: 13</td>
+                    </tr>
+                </table>
+                </div>
+
+                <table id="menu-status-big" style="margin-bottom: 20px;">
+                    <tr>
+                        <td>WEAPON:</td>
+                        <td><mark id="marked-dark">DarkSwd</mark></td>
+                    </tr>
+                    <tr>
+                        <td>ARMOR:</td>
+                        <td><mark id="marked-dark">BlackMantle</mark></td>
+                    </tr>
+                    <tr>
+                        <td>ELEMENT:</td>
+                        <td><mark id="marked">Elec / Holy</mark></td>
+                    </tr>
+                </table>
+                <p id="menu-status-big">MONEY: <a href="../lost.html">1225</a></p>
+            </article>
+            <article class="menu-p3 menu-disabled items-menu">
+                <ul id="menu-status-big" style="margin-bottom: 30px; list-style: none;">
+                    <li class="item-select enabled-snd" onclick="dogdollar()">Dog Dollar</li>
+                    <li class="item-select enabled-snd" onclick="noodles()">Instant Noodles</li>
+                    <li class="item-select enabled-snd" onclick="purecrystal()">Pure Crystal</li>
+                </ul>
+
+                <ul class="menu-item-opt">
+                    <li class="item-opt-disabled disabled-snd">USE</li>
+                    <li class="item-opt-disabled disabled-snd">INFO</li>
+                    <li class="item-opt-disabled disabled-snd">DROP</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+
+    <img src="../images/paige fb.png" id="paige-fullbody-mobile">
+    <div id="dialogue-box" class="mobile-menu" style="margin-bottom: 15px;">
+        <article class="menu-padding">
+        <p class="menu-status-big-mobile" style="margin-bottom: 30px;">"Paige"</p>
+        <table class="menu-status-big-mobile" style="margin-bottom: 30px;">
+            <tr>
+                <td>LV</td>
+                <td class="scurrent-lvl-display">4</td>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td>45 / 45</td>
+            </tr>
+        </table>
+
+        <div class="inline-status" style="margin-bottom: 30px;">
+            <table class="menu-status-big-mobile">
+                <tr>
+                    <td>AT</td>
+                    <td>12(4)</td>
+                </tr>
+                <tr>
+                    <td>DF</td>
+                    <td>23(11)</td>
+                </tr>
+            </table>
+            <table class="left-side menu-status-big-mobile">
+                <tr>
+                    <td class="current-exp-display">EXP: 37</td>
+                </tr>
+                <tr>
+                    <td class="next-lvl-display">NEXT: 13</td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="inline-status-mobile menu-status-big-mobile" style="margin-bottom: 30px;">
+            <tr>
+                <td>AT 12(4)</td>
+                <td>DF 23(11)</td>
+            </tr>
+            <tr>
+                <td class="current-exp-display">EXP: 37</td>
+                <td class="next-lvl-display">NEXT: 13</td>
+            </tr>
+        </table>
+
+        <table class="menu-status-big-mobile" style="margin-bottom: 20px;">
+            <tr>
+                <td>WEAPON:</td>
+                <td><mark id="marked-dark">DarkSwd</mark></td>
+            </tr>
+            <tr>
+                <td>ARMOR:</td>
+                <td><mark id="marked-dark">BlackMantle</mark></td>
+            </tr>
+            <tr>
+                <td>ELEMENT:</td>
+                <td><mark id="marked">Elec / Holy</mark></td>
+            </tr>
+        </table>
+        <p class="menu-status-big-mobile" style="margin-bottom: 30px;">MONEY: <a href="../lost.html">1225</a></p>
+        <p class="menu-status-big-mobile">ITEMS</p>
+        <ul class="menu-status-big-mobile" style="margin-bottom: 30px; list-style: none;">
+            <li class="item-select enabled-snd" onclick="dogdollar()">Dog Dollar</li>
+            <li class="item-select enabled-snd" onclick="noodles()">Instant Noodles</li>
+            <li class="item-select enabled-snd" onclick="purecrystal()">Pure Crystal</li>
+        </ul>
+
+        <ul class="menu-item-opt" style="height: min-content;">
+            <li class="item-opt-disabled disabled-snd">USE</li>
+            <li class="item-opt-disabled disabled-snd">INFO</li>
+            <li class="item-opt-disabled disabled-snd">DROP</li>
+        </ul>
+        </article>
+    </div>
+
+    <div class="cool-level-bar">
+        <div class="level-status">
+            <p class="p_text-dialogue current-exp-display">EXP: 37</p>
+            <p class="p_text-dialogue next-lvl-display">NEXT: 13</p>
+        </div>
+
+        <div class="lvl-box">
+            <div class="lvl-meter">
+                <div class="lvl-progress-bar level"></div>
+            </div>
+        </div>
+        <div class="level-status">
+            <p class="p_text-dialogue max-exp-display">MAX: 50</p>
+            <p class="p_text-dialogue current-lvl-display">LV: 4</p>
+        </div>
+
+        <div class="grind-btn-wrapper">
+            <button class="grind-btn" onclick="getStronger()">get stronger.</button>
+        </div>
+    </div>
+
+    <div id="dialogue-box">
+        <article class="txtsegment-dialogue" id="about-padding">
+            <p class="txt_topics-dialogue">SOBRE ELE</p>
+            <p class="p_text-dialogue">Paige foi um lightner e um dos heróis de uma antiga versão da profecia que 
+                fora perdida há tempos atrás. tinha uma proeficiência em <mark id="marked">magia sagrada</mark> 
+                e atuava como clérigo, focando principalmente em ser o suporte do time.
+            </p>
+            <p id="about-more" class="p_text-dialogue more-text">
+                Apesar de sua própria natureza, Paige era considerado como um líder entre seu grupo, guiando-os até a vitória.
+            </p>
+            <p class="readmore-text enabled-snd" onclick="readMore()">[VER MAIS.]</p>
+        </article>
+        <img src="../images/paige_happy-spr.png" id="portrait-icon">
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">ATRIBUTOS</p>
+        <div class="character-grid">
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">HP:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">TPs:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 74%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">SPD:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 65%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">DEF:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 86%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">STR:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 33%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">HAX:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">B.IQ:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">DEX:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 77%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">HABILIDADES</p>
+        <div class="character-grid">
+            <div class="abilities-box">
+                <p class="ability-name">P-ACTION</p>
+                <img src="../images/p-action.png" class="ability-icon">
+                <p class="ability-cost">CUSTO: 0% TP</p>
+                <p class="character-desc">Paige pode atuar por conta propria dentro do campo de batalha, sem necessidade de um lider para P-ACTION.</p>
+            </div>
+            <div class="abilities-box">
+                <p class="ability-name">FRIENDLINGS</p>
+                <img src="../images/friend-head.png" class="ability-icon">
+                <p class="ability-cost">CUSTO: 15% TP</p>
+                <p class="character-desc">Regenera 30HP para a alianca atual, mas aumenta dano baseado em gato por 5 a cada uso. +1 friend.</p>
+            </div>
+            <div class="abilities-box">
+                <p class="ability-name">HERDING</p>
+                <img src="../images/friendling horde.png" class="ability-icon">
+                <p class="ability-cost">CUSTO: 66% TP</p>
+                <p class="character-desc">Utiliza uma horda de friends para atacar o oponente, 1 friend por friendling armazenado.</p>
+            </div>
+            <div class="abilities-box">
+                <p class="ability-name">PURIFICATION</p>
+                <img src="../images/purification.png" class="ability-icon">
+                <p class="ability-cost">CUSTO: 100% TP</p>
+                <p class="character-desc">Cria um pilar de pura luz que erradica qualquer escuridao, dano baseado em gato volta ao zero.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">INVENTARIO</p>
+        <p class="p_text-dialogue item-qtd"></p>
+        <div class="character-grid inventory-container"></div>
+    </div>
+
+    <div id="dialogue-box" style="padding-bottom: 5%; margin-top: 15px; margin-bottom: 5%;">
+    <article class="txtsegment-dialogue">
+        <p class="txt_topics-dialogue">OUTROS DETALHES</p>
+        <table class="p_text-dialogue" id="about-table-pc">
+            <tr>
+                <td>RAÇA:</td>
+                <td>Monstro / Lightner, ovelha</td>
+            </tr>
+            <tr>
+                <td>IDADE:</td>
+                <td>N.D.</td>
+            </tr>
+            <tr>
+                <td>CIDADE NATAL:</td>
+                <td>Hometown</td>
+            </tr>
+            <tr>
+                <td>ENDEREÇO:</td>
+                <td>N.D.</td>
+            </tr>
+            <tr>
+                <td>ALTURA:</td>
+                <td>1.66 m</td>
+            </tr>
+            <tr>
+                <td>PESO:</td>
+                <td>53 kg</td>
+            </tr>
+            <tr>
+                <td>PARADEIRO:</td>
+                <td>Desconhecido</td>
+            </tr>
+            <tr>
+                <td>TELEFONE:</td>
+                <td>+X (XX0) 915 - 199X</td>
+            </tr>
+            <tr>
+                <td>DATA/HORA:</td>
+                <td style="text-decoration: underline;">12/26/XXXX - 22h 16min</td>
+            </tr>
+        </table>
+        <table class="p_text-dialogue" id="about-table-mobile">
+            <tr>
+                <td>RAÇA:<br>Monstro / Lightner, ovelha</td>
+            </tr>
+            <tr>
+                <td>IDADE:<br>N.D.</td>
+            </tr>
+            <tr>
+                <td>CIDADE NATAL:<br>Hometown</td>
+            </tr>
+            <tr>
+                <td>ENDEREÇO:<br>N.D.</td>
+            </tr>
+            <tr>
+                <td>ALTURA:<br>1.66 m</td>
+            </tr>
+            <tr>
+                <td>PESO:<br>53 kg</td>
+            </tr>
+            <tr>
+                <td>PARADEIRO:<br>Desconhecido</td>
+            </tr>
+            <tr>
+                <td>TELEFONE:<br>+X (XX0) 915 - 199X</td>
+            </tr>
+            <tr>
+                <td>DATA/HORA:<br>12/26/XXXX - 22h 16min</td>
+            </tr>
+        </table>
+    </article>
+    </div>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">Fugimura Kenji, 2026 - Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function Items() {
+            const stats = document.querySelector(".stats-menu");
+            const items = document.querySelector(".items-menu");
+
+            items.classList.remove('menu-disabled');
+            stats.classList.add('menu-disabled');
+        }
+        function Stats() {
+            const stats = document.querySelector(".stats-menu");
+            const items = document.querySelector(".items-menu");
+
+            stats.classList.remove('menu-disabled');
+            items.classList.add('menu-disabled');
+        }
+
+                const items = [
+            {
+                name: "DARK SWORD",
+                image: "../images/darkswd.png",
+                rarity: "RARIDADE: A+",
+                rarity_color: "#ffff00",
+                link: "",
+                description: "Uma lamina obscura que pode ser vista uma noite estrelada a qualquer momento do dia. Voce consegue sentir a temperatura caindo."
+            },
+            {
+                name: "BLACK MANTLE",
+                image: "../images/darkmantle.png",
+                rarity: "RARIDADE: S-",
+                rarity_color: "#db429e",
+                link: "",
+                description: "Apesar do nome dizer 'black', possui uma coloracao azul escura acinzentada com um tecido de laranja forte no interior."
+            },
+            {
+                name: "BLACK SHARD",
+                image: "../images/black-shard.png",
+                rarity: "RARIDADE: SSS+",
+                rarity_color: "#6f1cff",
+                link: "device_index.html",
+                description: "Fragmento de algo em forma de adaga. Acerta a fraqueza de inimigos de elemento DARK."
+            },
+        ]
+    </script>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

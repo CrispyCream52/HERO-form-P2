@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="index.html" class="nav_link">Inicio</a></li>
+            <li class="m-opt disabled-snd" style="color: #ffff00; cursor: default;">* Personagens</li>
+            <li class="m-opt enabled-snd"><a href="gallery.html" class="nav_link">Galeria</a></li>
+            <li class="m-opt enabled-snd"><a href="contact.html" class="nav_link">Contato</a></li>
+            <li class="m-opt enabled-snd"><a class="nav_link theme-btn" onclick="Theme()">Dark</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="index.html" class="nav_link"><li class="enabled-snd">Início</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Personagens</li>
+            <a href="gallery.html" class="nav_link"><li class="enabled-snd">Galeria</li></a>
+            <a href="contact.html" class="nav_link"><li class="enabled-snd">Contato</li></a>
+            <a class="nav_link theme-btn" onclick="Theme()"><li class="enabled-snd">Dark</li></a>
+        </ul>
+    </div>
+
+    <p class="txt_topics" style="text-align: center;">PERSONAGENS</p>
+    
+    <main id="character-selector">
+        <article>
+            <div class="character-card enabled-snd">
+                <a href="paige.html">
+                <div class="characters">
+                    <img src="../images/paige_5.png">
+                </div>
+                <div class="characters-info">
+                    <p class="txt_char-title">PAIGE</p>
+                    <p class="txt_char-desc">por CK52<br>KEY: SORRY</p>
+                </div>
+                </a>
+            </div>
+
+            <div class="character-card enabled-snd">
+                <a href="december.html">
+                <div class="characters">
+                    <img src="../images/dess_1.png">
+                </div>
+                <div class="characters-info">
+                    <p class="txt_char-title">DECEMBER</p>
+                    <p class="txt_char-desc">por Toby Fox<br>interp. por CK52</p>
+                </div>
+                </a>
+            </div>
+        </article>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">Fugimura Kenji, 2026 - Todos os direitos reservados.</p>
+    </footer>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

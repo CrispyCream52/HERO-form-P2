@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nightmare</title>
+    <link rel="stylesheet" href="css/redacted.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body onclick="cutscene()">
+    <audio src="sounds/snd_board_summon.wav" id="summon"></audio>
+    <audio src="sounds/snd_board_unsummon.wav" id="unsummon"></audio>
+    <div class="centered">
+        <img src="images/ERAM-walk_down.gif" id="ERAM">
+        <p id="hidden-small"></p>
+        <a href="https://crispycream52.itch.io/device-mantle" target="_blank" class="hidden-btn btn">DEVICE_MANTLE.zip</a>
+    </div>
+    
+    <script>
+        let cutscene_flag = false;
+
+        const dialogueBox = document.getElementById('hidden-small');
+        const E_RAM = document.getElementById('ERAM');
+        const ambience = new Audio('sounds/ocean.mp3');
+        const summon = document.getElementById('summon');
+        const unsummon = document.getElementById('unsummon');
+        ambience.volume = 0.2;
+        ambience.loop = true;
+        summon.volume = 0.5;
+        unsummon.volume = 0.5;
+
+        const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        async function dialogue(text, duration) {
+            dialogueBox.textContent = text;
+            await wait(duration);
+        }
+
+        async function cutscene() {
+            if (cutscene_flag) return;
+            cutscene = true;
+
+            const btn = document.querySelector(".hidden-btn");
+
+            ambience.play();
+            await wait(1000);
+            summon.play();
+            await wait(1000);
+            E_RAM.classList.add('ERAM-walk01');
+            await wait(10000);
+            E_RAM.src = 'images/ERAM_idle-down.png';
+            await wait(2000);
+            await dialogue("How wonderful, isn't it?", 6000);
+            await dialogue("This place, this world.", 4000);
+            await dialogue("Everything is so... quiet.", 6000);
+            await dialogue(".",  1000);
+            await dialogue("..",  2000);
+            await dialogue("...",  3000);
+            await dialogue("I have something rather   ",  1500);
+            await dialogue("I have something rather.  ",  500);
+            await dialogue("I have something rather.. ",  500);
+            await dialogue("I have something rather...",  2500);
+            await dialogue("Interesting, just for you.",  6000);
+            
+            btn.classList.remove("hidden-btn");
+            await wait(2000);
+            await dialogue("It's very unfinished.",  4000);
+            await dialogue("But I think you will enjoy.", 8000);
+            await dialogue("Oh, and the code. Almost forgot.", 4000);
+            await dialogue("Is      ", 2000);
+            await dialogue("Is 1    ", 1000);
+            await dialogue("Is 12   ", 1000);
+            await dialogue("Is 122  ", 2000);
+            await dialogue("Is 1225.", 4000);
+            unsummon.play();
+            await wait(333);
+            E_RAM.remove();
+        };
+    </script>
+</body>
+</html>

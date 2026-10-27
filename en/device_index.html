@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style-dark.css">
+    <link rel="icon" type="image/x-icon" href="../images/nothing.png">
+</head>
+<body>
+    <div class="burning-eyes"></div>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt disabled-snd" style="color: #f26422; cursor: default;">* Home</li>
+            <li class="m-opt enabled-snd"><a href="device_oc.html" class="nav_link">Characters</a></li>
+            <li class="m-opt enabled-snd"><a href="device_contact.html" class="nav_link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <li class="disabled-snd selected-opt-mobile">* Home</li>
+            <a href="device_oc.html" class="nav_link"><li class="enabled-snd">Characters</li></a>
+            <a href="device_contact.html" class="nav_link"><li class="enabled-snd">Contact</li></a>
+        </ul>
+    </div>
+
+    <main>
+    <img src="../images/DT-logo-soulless2.png" id="title">
+
+    <article class="c_txtsegment">
+        <p class="c_txt_topics">PREFACE</p>
+        <p class="p_prophecy">The prophecy, whispered amongst the shadows.<br>The legend of this world.</p>
+        <p class="p_prophecy" style="margin-top: 10%;">&lt;DELTARUNE.&gt;</p>
+        <img src="../images/deltarune-panel.png" alt="<DELTARUNE>" id="hero">
+        <p class="p_prophecy">A world plunged into pure light.<br>Beneath it, grew an eternal night.</p>
+        <p class="p_prophecy">If the fountains were freed, The Roaring shall occur.<br>And titans would form, from darkened eyes.</p>
+        <p class="p_prophecy">The light and dark, both burning dire.<br>A countdown to Earth's demise.<br>But lo, on broken hopes they send.
+        <br>Three heroes at the world's end.</p>
+        <p class="p_prophecy" style="margin-top: 10%;">The first hero. The angel's heavenly embodiment.</p>
+        <img src="../images/hero-01-panel.png" alt="hero-01" id="hero">
+        <p class="p_prophecy">The second hero. [REDACTED]</p>
+        <p class="p_prophecy">The Third hero. [REDACTED]</p>
+        <p class="p_prophecy">The Original Sin, how profane to shed such blood.<br>Shall meet against the saviors destination.</p>
+        <p class="p_prophecy">They'll hear the ring of heaven's call.<br>They'll see the tail of hell take crawl.</p>
+        <p class="p_prophecy">And then. When all hope is lost for the tale.<br>The final tragedy unveils.</p>
+        <p class="p_prophecy">To save the worlds, there is only one way.</p>
+        <p class="p_prophecy">[REDACTED]</p>
+        <p class="p_prophecy">Only then will the worlds breathe one more time.</p>
+    </article>
+    <div class="pines">
+        <img src="../images/pine-trees.png" id="left_trees">
+        <img src="../images/tree_tail.png" id="right_trees">
+    </div>
+
+    <article>
+        <div class="buttons">
+            <a class="obtain_btn enabled-snd" href="../device_application.html">_APPLICATION</a>
+        </div>
+    </article>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">POWERED BY ██████████</p>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

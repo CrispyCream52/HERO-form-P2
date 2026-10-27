@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>December</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="index.html" class="nav_link">Home</a></li>
+            <li class="m-opt disabled-snd" style="color: #ffff00; cursor: default;">* Characters</li>
+            <li class="m-opt enabled-snd"><a href="gallery.html" class="nav_link">Gallery</a></li>
+            <li class="m-opt enabled-snd"><a href="contact.html" class="nav_link">Contact</a></li>
+            <li class="m-opt enabled-snd"><a class="nav_link theme-btn" onclick="Theme()">Dark</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="index.html" class="nav_link"><li class="enabled-snd">Home</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Characters</li>
+            <a href="gallery.html" class="nav_link"><li class="enabled-snd">Gallery</li></a>
+            <a href="contact.html" class="nav_link"><li class="enabled-snd">Contact</li></a>
+            <a class="nav_link theme-btn" onclick="Theme()"><li class="enabled-snd">Dark</li></a>
+        </ul>
+    </div>
+    
+    <main>
+    <div class="buttons">
+        <button class="obtain_btn enabled-snd" onclick="window.location.href = 'characters.html'">&lt;&lt; RETURN</button>
+    </div>
+    <div class="oc_container">
+        <div class="oc-top">
+            <div class="left_menu">
+                <article class="menu-p1">
+                <table id="menu-status-big">
+                    <tr>
+                        <td>Dess</td>
+                    </tr>
+                </table>
+                <table id="menu-status">
+                    <tr>
+                        <td id="menu-text">lv</td>
+                        <td id="menu-text">1</td>
+                    </tr>
+                    <tr>
+                        <td id="menu-text">hp</td>  
+                        <td id="menu-text">25/25</td>  
+                    </tr>
+                    <tr>
+                        <td id="menu-text">D$</td>
+                        <td id="menu-text">19</td>
+                    </tr>
+                </table>
+                </article>
+
+                <article class="menu-p2">
+                    <ul>
+                        <li><a onclick="Items()" id="item-btn" class="menu-status-opt enabled-snd">ITEM</a></li>
+                        <li><a onclick="Stats()" id="stats-btn" class="menu-status-opt enabled-snd">STAT</a></li>
+                        <li><a onclick="garbageNoise()" class="menu-status-opt enabled-snd">CELL</a></li>
+                    </ul>
+                </article>
+            </div> 
+        </div>
+        <img src="../images/dess fb.png" id="paige-fullbody">
+        <div class="right_menu">
+            <article class="menu-p3 stats-menu">
+                <p id="menu-status-big" style="margin-bottom: 30px;">"Dess"</p>
+                <table id="menu-status-big" style="margin-bottom: 30px;">
+                    <tr>
+                        <td>LV</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>HP</td>
+                        <td>25 / 25</td>
+                    </tr>
+                </table>
+
+                <div class="inline-status-pc" style="margin-bottom: 30px;">
+                <table id="menu-status-big">
+                    <tr>
+                        <td>AT</td>
+                        <td>4(0)</td>
+                    </tr>
+                    <tr>
+                        <td>DF</td>
+                        <td>7(0)</td>
+                    </tr>
+                </table>
+                <table id="menu-status-big" class="left-side">
+                    <tr>
+                        <td>EXP: 0</td>
+                    </tr>
+                    <tr>
+                        <td>NEXT: 10</td>
+                    </tr>
+                </table>
+                </div>
+
+                <table id="menu-status-big" style="margin-bottom: 20px;">
+                    <tr>
+                        <td>WEAPON:</td>
+                        <td>BaseballBat</td>
+                    </tr>
+                    <tr>
+                        <td>ARMOR:</td>
+                        <td>CheckedShirt</td>
+                    </tr>
+                    <tr>
+                        <td>ELEMENT:</td>
+                        <td>None</td>
+                    </tr>
+                </table>
+                <p id="menu-status-big">MONEY: 19</p>
+            </article>
+            <article class="menu-p3 menu-disabled items-menu">
+                <ul id="menu-status-big" style="margin-bottom: 30px; list-style: none;">
+                    <li class="item-select enabled-snd" onclick="astronautfood()">Astronaut Food</li>
+                    <li class="item-select enabled-snd" onclick="egg()">Egg</li>
+                    <li class="item-select enabled-snd" onclick="quiche()">Quiche</li>
+                </ul>
+
+                <ul class="menu-item-opt">
+                    <li class="item-opt-disabled disabled-snd">USE</li>
+                    <li class="item-opt-disabled disabled-snd">INFO</li>
+                    <li class="item-opt-disabled disabled-snd">DROP</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+
+    <img src="../images/dess fb.png" id="paige-fullbody-mobile">
+    <div id="dialogue-box" class="mobile-menu" style="margin-bottom: 15px;">
+        <article class="menu-padding">
+        <p class="menu-status-big-mobile" style="margin-bottom: 30px;">"Dess"</p>
+        <table class="menu-status-big-mobile" style="margin-bottom: 30px;">
+            <tr>
+                <td>LV</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td>25 / 25</td>
+            </tr>
+        </table>
+
+        <div class="inline-status" style="margin-bottom: 30px;">
+            <table class="menu-status-big-mobile">
+                <tr>
+                    <td>AT</td>
+                    <td>4(0)</td>
+                </tr>
+                <tr>
+                    <td>DF</td>
+                    <td>7(0)</td>
+                </tr>
+            </table>
+            <table class="left-side menu-status-big-mobile">
+                <tr>
+                    <td>EXP: 0</td>
+                </tr>
+                <tr>
+                    <td>NEXT: 10</td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="inline-status-mobile menu-status-big-mobile" style="margin-bottom: 30px;">
+            <tr>
+                <td>AT 4(0)</td>
+                <td>DF 7(0)</td>
+            </tr>
+            <tr>
+                <td>EXP: 0</td>
+                <td>NEXT: 10</td>
+            </tr>
+        </table>
+
+        <table class="menu-status-big-mobile" style="margin-bottom: 20px;">
+            <tr>
+                <td>WEAPON:</td>
+                <td>BaseballBat</td>
+            </tr>
+            <tr>
+                <td>ARMOR:</td>
+                <td>CheckedShirt</td>
+            </tr>
+            <tr>
+                <td>ELEMENT:</td>
+                <td>None</td>
+            </tr>
+        </table>
+        <p class="menu-status-big-mobile" style="margin-bottom: 30px;">MONEY: 19</p>
+        <p class="menu-status-big-mobile">ITEMS</p>
+        <ul class="menu-status-big-mobile" style="margin-bottom: 30px; list-style: none;">
+            <li class="item-select enabled-snd" onclick="astronautfood()">Astronaut Food</li>
+            <li class="item-select enabled-snd" onclick="egg()">Egg</li>
+            <li class="item-select enabled-snd" onclick="quiche()">Quiche</li>
+        </ul>
+
+        <ul class="menu-item-opt" style="height: min-content;">
+            <li class="item-opt-disabled disabled-snd">USE</li>
+            <li class="item-opt-disabled disabled-snd">INFO</li>
+            <li class="item-opt-disabled disabled-snd">DROP</li>
+        </ul>
+        </article>
+    </div>
+
+    <div id="dialogue-box">
+        <article class="txtsegment-dialogue" id="about-padding">
+            <p class="txt_topics-dialogue">ABOUT HER</p>
+            <p class="p_text-dialogue">
+                December, also known as 'Dess', is the first child of the Holiday family. She's a music prodigy, 
+                baseball player, and is always protective to her younger sibling, 'Noelle'.
+            </p>
+            <p id="about-more" class="p_text-dialogue more-text">
+                Dess is someone who likes to get in trouble, seek adventures and pursue danger. Has a small temper, but a big heart.
+            </p>
+            <p class="readmore-text enabled-snd" onclick="readMore()">[READ MORE.]</p>
+        </article>
+        <img src="../images/dess_11.png" id="portrait-icon">
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">ATTRIBUTES</p>
+        <div class="character-grid">
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">HP:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">TPs:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">SPD:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">DEF:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">STR:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">HAX:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 5%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">B.IQ:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="prog_bar-box">
+                <label class="p_text-dialogue" for="health">DEX:</label>
+                <div class="progress-meter">
+                    <div class="progress-bar health" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">ABILITIES</p>
+        <div class="character-grid">
+            <div class="abilities-box">
+                <p class="ability-name">D-ACTION</p>
+                <img src="../images/p-action.png" class="ability-icon">
+                <p class="ability-cost">COST: 0% TP</p>
+                <p class="character-desc">Dess can act by their own in battle instead of fighting, only if she means it.</p>
+            </div>
+            <div class="abilities-box">
+                <p class="ability-name">HOME RUN</p>
+                <img src="../images/home-run.png" class="ability-icon">
+                <p class="ability-cost">COST: 30% TP</p>
+                <p class="character-desc">Charges against the opponent with full speed and hit them with your antlers. Tire enemies and reduces defense.</p>
+            </div>
+            <div class="abilities-box">
+                <p class="ability-name">STRIKE 4</p>
+                <img src="../images/strike4.png" class="ability-icon">
+                <p class="ability-cost">COST: 45% TP</p>
+                <p class="character-desc">50% chance of deflect incoming attacks and hit the opponent with your weapon, 75% if using baseball bat.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-wrapper-box" style="margin-top: 15px;">
+        <p class="c_txt_topics-dialogue">INVENTORY</p>
+        <p class="p_text-dialogue item-qtd"></p>
+        <div class="character-grid inventory-container"></div>
+    </div>
+
+    <div id="dialogue-box" style="padding-bottom: 5%; margin-top: 15px; margin-bottom: 5%;">
+    <article class="txtsegment-dialogue">
+        <p class="txt_topics-dialogue">OTHER DETAILS</p>
+        <table class="p_text-dialogue" id="about-table-pc">
+            <tr>
+                <td>RACE:</td>
+                <td>Monster / Lightner, Deer</td>
+            </tr>
+            <tr>
+                <td>AGE:</td>
+                <td>15 (last seen), 20 (nowadays)</td>
+            </tr>
+            <tr>
+                <td>BIRTHPLACE:</td>
+                <td>Hometown</td>
+            </tr>
+            <tr>
+                <td>ADDRESS:</td>
+                <td>Holiday Mannor</td>
+            </tr>
+            <tr>
+                <td>HEIGHT:</td>
+                <td>5'8"</td>
+            </tr>
+            <tr>
+                <td>WEIGHT:</td>
+                <td>122.3 lbs</td>
+            </tr>
+            <tr>
+                <td>LAST KNOWN:</td>
+                <td>unknown</td>
+            </tr>
+            <tr>
+                <td>PHONE:</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>DATE/HOUR:</td>
+                <td style="text-decoration: underline;">12/24/199X - 18h 33min</td>
+            </tr>
+        </table>
+        <table class="p_text-dialogue" id="about-table-mobile">
+            <tr>
+                <td>RACE:<br>Monster / Lightner, Deer</td>
+            </tr>
+            <tr>
+                <td>AGE:<br>15 (last seen), 20 (nowadays)</td>
+            </tr>
+            <tr>
+                <td>BIRTHPLACE:<br>Hometown</td>
+            </tr>
+            <tr>
+                <td>ADDRESS:<br>Holiday Mannor</td>
+            </tr>
+            <tr>
+                <td>HEIGHT:<br>5'8"</td>
+            </tr>
+            <tr>
+                <td>WEIGHT:<br>122.3 lbs</td>
+            </tr>
+            <tr>
+                <td>LAST KNOWN:<br>unknown</td>
+            </tr>
+            <tr>
+                <td>PHONE:<br>N/A</td>
+            </tr>
+            <tr>
+                <td>DATE/HOUR:<br>12/24/199X - 18h 33min</td>
+            </tr>
+        </table>
+    </article>
+    </div>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">Fugimura Kenji, 2026 - All the rights reserved.</p>
+    </footer>
+    <script>
+        function Items() {
+            const stats = document.querySelector(".stats-menu");
+            const items = document.querySelector(".items-menu");
+
+            items.classList.remove('menu-disabled');
+            stats.classList.add('menu-disabled');
+        }
+        function Stats() {
+            const stats = document.querySelector(".stats-menu");
+            const items = document.querySelector(".items-menu");
+
+            stats.classList.remove('menu-disabled');
+            items.classList.add('menu-disabled');
+        }
+
+        const items = [
+            {
+                name: "BASEBALL BAT",
+                image: "../images/strike4.png",
+                rarity: "RARITY: C+",
+                rarity_color: "white",
+                link: "",
+                description: "Dess's favorite weapon, a christmas themed baseball bat she usually carries with her. Always comes in handy."
+            },
+            {
+                name: "CHECKED SHIRT",
+                image: "../images/checked-shirt.png",
+                rarity: "RARITY: B",
+                rarity_color: "white",
+                link: "",
+                description: "A cozy, red plaid shirt. Dess wanted it for christmas when younger, it would be cool to look like those teenager skaters."
+            },
+        ]
+    </script>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

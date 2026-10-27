@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
+</head>
+<body>
+    <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
+    <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
+    <nav id="navbar">
+        <ul>
+            <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>
+            <li class="m-opt enabled-snd"><a href="index.html" class="nav_link">Home</a></li>
+            <li class="m-opt enabled-snd"><a href="characters.html" class="nav_link">Characters</a></li>
+            <li class="m-opt disabled-snd" style="color: #ffff00; cursor: default;">* Gallery</li>
+            <li class="m-opt enabled-snd"><a href="contact.html" class="nav_link">Contact</a></li>
+            <li class="m-opt enabled-snd"><a class="nav_link theme-btn" onclick="Theme()">Dark</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mobile-navbar" class="hidden-menu">
+        <ul>
+            <p class="mobile-menu-title">MENU</p>
+            <a href="index.html" class="nav_link"><li class="enabled-snd">Home</li></a>
+            <a href="characters.html" class="nav_link"><li class="enabled-snd">Characters</li></a>
+            <li class="disabled-snd selected-opt-mobile">* Gallery</li>
+            <a href="contact.html" class="nav_link"><li class="enabled-snd">Contact</li></a>
+            <a class="nav_link theme-btn" onclick="Theme()"><li class="enabled-snd">Dark</li></a>
+        </ul>
+    </div>
+
+    <p class="txt_topics" style="text-align: center; padding-bottom: 30px;">GALLERY</p>
+    
+    <main>
+    <div class="gallery-wrapper-box">
+        <p class="small-title">SPECIALS</p>
+        <div class="art-grid specials-carousel"></div>
+
+        <p class="small-title">ARTWORKS</p>
+        <div class="art-grid artworks-carousel"></div>
+    </div>
+    </main>
+    <hr>
+    <footer>
+        <p id="footer-txt">Fugimura Kenji, 2026 - All the rights reserved.</p>
+    </footer>
+    <script>
+        const specials = [
+            {
+                title: "Flower Man",
+                date: "09/19/2026",
+                description: "Jarona!",
+                image: "https://64.media.tumblr.com/573faf2709c3f4714ec1fda4741e754f/9d3ea4f6ebfd83fa-b0/s2048x3072/38c3cbd96d852fbb23eecf07d83d15f8264c938c.jpg",
+                video: "https://youtu.be/a69KxnGdoyA?si=u1YLuOHoG3SseE2X",
+                link: "https://www.tumblr.com/crispycream52/828237224909881344/%E8%8A%B1%E7%94%B7flower-man-flowery-illustration?source=share"
+            },
+            {
+                title: "DELTARUNE is waiting.",
+                date: "06/17/2026",
+                description: "7 days left.",
+                image: "https://64.media.tumblr.com/7284b0045719625699403f791bcdcb7d/4570fedf0cbfdf13-80/s2048x3072/a207d046b80b17b3a76e8b693dcc6e9f9ce1f1e9.jpg",
+                video: "https://youtu.be/lmYtJ88qNGo?si=B6NtzKIsZ1m3lT6x",
+                link: "https://www.tumblr.com/crispycream52/819722245804048384/deltarune-is-waiting-7-days-left?source=share"
+            },
+            {
+                title: "Promises.",
+                date: "11/05/2025",
+                description: "DELTARUNE 7th Anniversary P. VI",
+                image: "https://64.media.tumblr.com/44fd6eed4b54e75d8bad8fb8696cb451/0b223c465414b12e-3b/s2048x3072/ad74dabce853569a621827b68c205a7eb37fc2d6.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/799432348061057024/promises-deltarune-7th-anniversary-p?source=share"
+            },
+            {
+                title: "The Place Where it Rained.",
+                date: "11/04/2025",
+                description: "DELTARUNE 7th Anniversary P. V",
+                image: "https://64.media.tumblr.com/128b2a3b531ee9347b1731e5174ab6c2/65e1c64dc4034f90-2b/s2048x3072/1b1ae16e1bff5e9d643785c371125a0535e78541.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/799348289355087872/the-place-where-it-rained-deltarune-7th?source=share"
+            },
+            {
+                title: "Proceed.",
+                date: "11/03/2025",
+                description: "DELTARUNE 7th Anniversary P. IV",
+                image: "https://64.media.tumblr.com/4580446ff1c4a67a81757cefeef2bbb9/7d9429e5fc3c225c-b8/s2048x3072/173194ade4260ffa139bfa0f224dfb2c5cc1fdb6.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/799242716627288064/proceed-deltarune-7th-anniversary-p-iv-its?source=share"
+            },
+            {
+                title: "Tea Party.",
+                date: "11/02/2025",
+                description: "DELTARUNE 7th Anniversary P. III",
+                image: "https://64.media.tumblr.com/a442620d992f109ac2ee8d12851d2f8d/02a1757f25f9e590-b1/s2048x3072/76b1e347887cb1cb4dcef021c4297cb29335b063.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/799146234658062336/tea-party-deltarune-7th-anniversary-p-iii-36?source=share"
+            },
+            {
+                title: "Profanity.",
+                date: "11/01/2025",
+                description: "DELTARUNE 7th Anniversary P. II",
+                image: "https://64.media.tumblr.com/1b950efb46d34fdef73bd17078c46617/7660351bf94ad746-6c/s2048x3072/f4b143e00da7494d777a6b93907b5a7912743ec5.pnj",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/799066182779060224/profanity-deltarune-7th-anniversary-p-ii-26?source=share"
+            },
+            {
+                title: "Before the Story.",
+                date: "10/31/2025",
+                description: "DELTARUNE 7th Anniversary P. I",
+                image: "https://64.media.tumblr.com/53948a8c1eb7558de9dbcc1f3211ef1e/e90f5eb2a4fa409b-98/s2048x3072/337914cefff095cbbc9dd045070e9bab40a325dd.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/798966620976545792/before-the-story-deltarune-7th-anniversary-p?source=share"
+            }
+        ];
+
+        const artworks = [
+            {
+                title: "E-RAM - OC",
+                date: "10/15/2026",
+                description: "",
+                image: "https://64.media.tumblr.com/d6f343630cbe3e35e06622394a7fa414/2986c9c88d6ec239-04/s2048x3072/21972b103ea170369ca5b005cff168004adb93ca.jpg",
+                video: "https://youtu.be/QLTIVTylbmU?si=5BRz_hoHenURVmgo",
+                link: "https://www.tumblr.com/crispycream52/830590732285935616/e-ram-delta%D1%8Fu%D0%B8%C7%9D-crispycream52?source=share"
+            },
+            {
+                title: "Paige - OC",
+                date: "10/10/2026",
+                description: "",
+                image: "https://64.media.tumblr.com/af0438d3ef4c61152c069ec77a77fe1f/7d030a310c75e20c-b1/s2048x3072/d1b0a14f9f8d06c7715ea0569e5e5e0f1f00e8d4.jpg",
+                video: "https://youtu.be/wVGBG4mwN1A",
+                link: "https://www.tumblr.com/crispycream52/830180183814307840/paige-delta%D1%8Fu%D0%B8%C7%9D-crispycream52?source=share"
+            },
+            {
+                title: "Embered photoshoot",
+                date: "08/18/2026",
+                description: "'Embered' by Bendedede on X/Twitter.",
+                image: "https://64.media.tumblr.com/03992d01ea295173c64182f0fd5f18dd/b957f070e3ec8e14-f4/s2048x3072/92cccf263fa04e13ea4a39a57f774c496ad6d203.jpg",
+                video: "https://youtu.be/AZXuCokSZFc?si=kTZ-9EQp34alcSn6",
+                link: "https://www.tumblr.com/crispycream52/825298358507814912/december-holiday-embered?source=share"
+            },
+            {
+                title: "Lost Girl",
+                date: "08/01/2026",
+                description: "\"A lost, lost girl waiting to be found.\"",
+                image: "https://64.media.tumblr.com/316066132a7e8e2e8ff51b36eb1b16e1/0372634b8a975e50-d4/s2048x3072/d4b39b72850f764cb7bdc81044748ae807da9520.jpg",
+                video: "https://youtu.be/_SvxKaC-DGk?si=tpU8A23Mf_t3Kocy",
+                link: "https://www.tumblr.com/crispycream52/823764157658710016/lost-girl?source=share"
+            },
+            {
+                title: "Susie & Noelle",
+                date: "07/09/2026",
+                description: "",
+                image: "https://64.media.tumblr.com/7bf7fa0110e118e8e63855ba2edf1cf8/b8629dea93cc36df-70/s2048x3072/318e2edf8157734fead192e4698cd951e6ddc2f0.jpg",
+                video: "https://youtu.be/hWOdio1elF4?si=J4hix9PE4gixtUeE",
+                link: "https://www.tumblr.com/crispycream52/821710290799427584/suselle-team-deltarune?source=share"
+            },
+            {
+                title: "Princess Ralsei",
+                date: "07/02/2026",
+                description: "",
+                image: "https://64.media.tumblr.com/3011954a4d1915b8971f9cd6a4f06f83/f15bc48848ba9e23-8e/s2048x3072/b2c294814b726c128053c6e294d7a28614b6f101.jpg",
+                video: "https://youtu.be/FhCIxC1f-yE?si=1X1oVCpMZU6BEIuS",
+                link: "https://www.tumblr.com/crispycream52/821059361403240448/princess-ralsei?source=share"
+            },
+            {
+                title: "The Lake.",
+                date: "06/28/2026",
+                description: "This is it. You only needed to see her once. And you'll move on.",
+                image: "https://64.media.tumblr.com/fa9d705d729b7bd0ed4dac25ac20ce92/2ac5fb2922df16d3-37/s2048x3072/13c916b44d747e09a05704574fd05afe4d2a6414.jpg",
+                video: "https://youtu.be/WyaqWFvfUHU?si=33JRUD9Fypc5q1vI",
+                link: "https://www.tumblr.com/crispycream52/820704164009148416/the-lake-noelle-holiday?source=share"
+            },
+            {
+                title: "Don't Forget.",
+                date: "06/12/2026",
+                description: "God of Hyperdeath, Asriel Dreemurr.",
+                image: "https://64.media.tumblr.com/3f808c61e47d939d81e3da1be87ab109/edc416feeae56730-b1/s2048x3072/9edb42c995eb53e2a6b9cba18d676a58398650fb.jpg",
+                video: "https://youtu.be/Oy8Lddthl0c?si=ne1XpBNftuiJUwMs",
+                link: "https://www.tumblr.com/crispycream52/819260702734811136/%E3%82%A2%E3%83%B3%E3%83%80%E3%83%BC%E3%83%86%E3%83%BC%E3%83%AB-dont-forget-god-of-hyperdeath?source=share"
+            },
+            {
+                title: "Power of NEO.",
+                date: "04/22/2026",
+                description: "'Dream Machine' from DELTARUNE: Digital Dreams.",
+                image: "https://64.media.tumblr.com/2ac4e66ee940b2d39c1a4e22492fb217/ed4742825d2442e2-82/s2048x3072/99e6bcc60ff6601dff89e18f5ce14ac90cf0d48f.jpg",
+                video: "https://youtu.be/9eoWq-TlK_M?si=dBzQCtOKrLtCjvfZ",
+                link: "https://www.tumblr.com/crispycream52/814635972253941760/power-of-neo-dream-machine?source=share"
+            },
+            {
+                title: "The Banished Angel",
+                date: "04/12/2026",
+                description: "\"Can anyone hear me?\".",
+                image: "https://64.media.tumblr.com/98112f4fccbebe083b158171e37196eb/50f1ac296b4de555-de/s2048x3072/3b646fd752638b1dc8445898c0fd8e7b76feee0e.jpg",
+                video: "https://youtu.be/ps4Bt4ypmNU?si=ci4SUrU3lUUALT2y",
+                link: "https://www.tumblr.com/crispycream52/813720110984527872/deltarune-the-angel-banished-from-heaven?source=share"
+            },
+            {
+                title: "Roots.",
+                date: "12/28/2025",
+                description: "Oh, the poor children.",
+                image: "https://64.media.tumblr.com/7513bc927f0b88f6fcafdf3d4104879e/f716b686aaf10452-dd/s2048x3072/d5a324ac7b9b3348f6cb85fe65b65177c49cab6a.jpg",
+                video: "https://youtube.com/shorts/siEQIM8tqzQ?si=bJSWsuUemCdUhjZD",
+                link: "https://www.tumblr.com/crispycream52/804205430837575680/roots-imagefriend-oh-the-poor-children?source=share"
+            },
+            {
+                title: "Choices.",
+                date: "10/31/2025",
+                description: "A Chara fan art.",
+                image: "https://64.media.tumblr.com/7183cd2ff2b6b634640bab5711271237/b14b6c6e4da35c32-ee/s2048x3072/0c07a4fc68b4f33e8d05a030beadecb0269ceff5.jpg",
+                video: "",
+                link: "https://www.tumblr.com/crispycream52/798893824058540032/choices-and-paths-a-chara-fan-art?source=share"
+            }
+        ];
+
+        function cardGen(art) {
+            const card = document.createElement("div");
+            card.classList.add("art-box");
+
+            const cardImgLink = document.createElement("a");
+            cardImgLink.classList.add("enabled-snd");
+            cardImgLink.href = art.link;
+            cardImgLink.target = "_blank";
+
+            const cardImg = document.createElement("img");
+            cardImg.src = art.image;
+            cardImg.alt = art.title;
+
+            cardImgLink.appendChild(cardImg);
+            card.appendChild(cardImgLink);
+
+            const titleBox = document.createElement("div");
+            titleBox.classList.add("art-title-box");
+
+            const title = document.createElement("p");
+            title.classList.add("art-title");
+            title.textContent = art.title;
+
+            const data = document.createElement("p");
+            data.classList.add("art-date");
+            data.textContent = art.date;
+
+            titleBox.appendChild(title);
+            titleBox.appendChild(data);
+
+            if(art.description != ""){
+                const description = document.createElement("p");
+                description.classList.add("art-desc");
+                description.textContent = art.description;
+
+                titleBox.appendChild(description);
+            }
+            if(art.video != ""){
+                const videoLink = document.createElement("p");
+                videoLink.classList.add("art-link", "enabled-snd");
+                videoLink.href = art.video;
+                videoLink.textContent = "See timelapse";
+                videoLink.target = "_blank";
+                videoLink.style.cursor = "pointer";
+
+                titleBox.appendChild(videoLink);
+            }
+
+            card.appendChild(titleBox);
+            return card;
+        }
+
+        const specialsContainer = document.querySelector(".specials-carousel");
+        const artworksContainer = document.querySelector(".artworks-carousel");
+
+        specials.forEach(function(art) {
+            const card = cardGen(art);
+            specialsContainer.appendChild(card);
+        });
+
+        artworks.forEach(function(art) {
+            const card = cardGen(art);
+            artworksContainer.appendChild(card);
+        });
+    </script>
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
