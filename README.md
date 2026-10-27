@@ -70,7 +70,13 @@ I wanted to keep the visual identity of the game to make people who already expe
     - [x] Contact form
     - [x] "READ MORE" option
     - [x] Interactable LV progress bar
-    - [ ] More (TBD)
+    - [x] Dark theme
+    - [x] Array based inventory
+    - [x] Inventory item counter 
+    - [x] User feedback
+    - [x] Form fields validation via JS
+    - [x] Greetings based on time zone
+    - [ ] Inventory rarity filter
 
 - [ ] EXTERNAL PROJECT (SECRET)<br>![](https://geps.dev/progress/35)
 
