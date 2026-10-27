@@ -1023,11 +1023,11 @@ figure figcaption {
 }
 .specials-carousel::scroll-button(right), .artworks-carousel::scroll-button(right) {
     content: '>';
-    translate: -20%;
+    translate: -50%;
 }
 .specials-carousel::scroll-button(left), .artworks-carousel::scroll-button(left) {
     content: '<';
-    translate: 20%;
+    translate: 50%;
 }
 
 /* botões do carrosel de artworks */
