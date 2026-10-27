@@ -1,4 +1,4 @@
-# MANTLE
+# HERO-form-P2
 ## ABOUT THE PROJECT
 Purpose: academic &amp; personal project intended to apply the programming fundamentals learnt in **Web Technology** class.
 
