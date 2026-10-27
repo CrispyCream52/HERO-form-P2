@@ -254,13 +254,16 @@
                 titleBox.appendChild(description);
             }
             if(art.video != ""){
-                const videoLink = document.createElement("p");
-                videoLink.classList.add("art-link", "enabled-snd");
-                videoLink.href = art.video;
-                videoLink.textContent = "See timelapse";
-                videoLink.target = "_blank";
-                videoLink.style.cursor = "pointer";
+                const videoLink_p = document.createElement("p");
+                const videoLink = document.createElement("a");
 
+                videoLink.href = art.video;
+                videoLink.target = "_blank";
+                videoLink_p.classList.add("art-link", "enabled-snd");
+                videoLink_p.textContent = ">>See timelapse";
+                videoLink_p.style.cursor = "pointer";
+
+                videoLink.appendChild(videoLink_p);
                 titleBox.appendChild(videoLink);
             }
 
