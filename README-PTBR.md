@@ -32,7 +32,13 @@ Eu queria manter a identidade visual do jogo para fazer com que as pessoas que j
     - [x] Formulário de contato
     - [x] Opção "VER MAIS"
     - [x] Barra de progresso de LV interagível
-    - [ ] Mais (ASD)
+    - [x] Tema escuro
+    - [x] Inventário baseado em array
+    - [x] Contador para itens de inventário 
+    - [x] User feedback
+    - [x] Validação dos campos do formulário via JS
+    - [x] Saudações baseada no fuso horário
+    - [ ] Filtro de raridade do inventário
 
 - [ ] Projeto Externo (SEGREDO)<br>![](https://geps.dev/progress/35)
 
