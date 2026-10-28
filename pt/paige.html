@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
 </head>
 <body>
+    <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
@@ -257,51 +258,51 @@
         <p class="c_txt_topics-dialogue">ATRIBUTOS</p>
         <div class="character-grid">
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">HP:</label>
+                <label class="p_text-dialogue">HP:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 100%;"></div>
+                    <div class="progress-bar" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">TPs:</label>
+                <label class="p_text-dialogue">TPs:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 74%;"></div>
+                    <div class="progress-bar" style="width: 74%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">SPD:</label>
+                <label class="p_text-dialogue">SPD:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 65%;"></div>
+                    <div class="progress-bar" style="width: 65%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">DEF:</label>
+                <label class="p_text-dialogue">DEF:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 86%;"></div>
+                    <div class="progress-bar" style="width: 86%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">STR:</label>
+                <label class="p_text-dialogue">STR:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 33%;"></div>
+                    <div class="progress-bar" style="width: 33%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">HAX:</label>
+                <label class="p_text-dialogue">HAX:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 90%;"></div>
+                    <div class="progress-bar" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">B.IQ:</label>
+                <label class="p_text-dialogue">B.IQ:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 70%;"></div>
+                    <div class="progress-bar" style="width: 70%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">DEX:</label>
+                <label class="p_text-dialogue">DEX:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 77%;"></div>
+                    <div class="progress-bar" style="width: 77%;"></div>
                 </div>
             </div>
         </div>
@@ -340,6 +341,13 @@
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTARIO</p>
         <p class="p_text-dialogue item-qtd"></p>
+        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
+        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+            <option value="none">Todos</option>
+            <option value="A+">A+</option>
+            <option value="S-">S-</option>
+            <option value="SSS+">SSS+</option>
+        </select>
         <div class="character-grid inventory-container"></div>
     </div>
 
@@ -436,11 +444,11 @@
             items.classList.add('menu-disabled');
         }
 
-                const items = [
+        const items = [
             {
                 name: "DARK SWORD",
                 image: "../images/darkswd.png",
-                rarity: "RARIDADE: A+",
+                rarity: "A+",
                 rarity_color: "#ffff00",
                 link: "",
                 description: "Uma lamina obscura que pode ser vista uma noite estrelada a qualquer momento do dia. Voce consegue sentir a temperatura caindo."
@@ -448,7 +456,7 @@
             {
                 name: "BLACK MANTLE",
                 image: "../images/darkmantle.png",
-                rarity: "RARIDADE: S-",
+                rarity: "S-",
                 rarity_color: "#db429e",
                 link: "",
                 description: "Apesar do nome dizer 'black', possui uma coloracao azul escura acinzentada com um tecido de laranja forte no interior."
@@ -456,7 +464,7 @@
             {
                 name: "BLACK SHARD",
                 image: "../images/black-shard.png",
-                rarity: "RARIDADE: SSS+",
+                rarity: "SSS+",
                 rarity_color: "#6f1cff",
                 link: "device_index.html",
                 description: "Fragmento de algo em forma de adaga. Acerta a fraqueza de inimigos de elemento DARK."

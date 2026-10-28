@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
 </head>
 <body>
+    <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
@@ -238,51 +239,51 @@
         <p class="c_txt_topics-dialogue">ATRIBUTOS</p>
         <div class="character-grid">
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">HP:</label>
+                <label class="p_text-dialogue">HP:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 100%;"></div>
+                    <div class="progress-bar" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">TPs:</label>
+                <label class="p_text-dialogue">TPs:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 0%;"></div>
+                    <div class="progress-bar" style="width: 0%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">SPD:</label>
+                <label class="p_text-dialogue">SPD:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 80%;"></div>
+                    <div class="progress-bar" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">DEF:</label>
+                <label class="p_text-dialogue">DEF:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 40%;"></div>
+                    <div class="progress-bar" style="width: 40%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">STR:</label>
+                <label class="p_text-dialogue">STR:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 100%;"></div>
+                    <div class="progress-bar" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">HAX:</label>
+                <label class="p_text-dialogue">HAX:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 5%;"></div>
+                    <div class="progress-bar" style="width: 5%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">B.IQ:</label>
+                <label class="p_text-dialogue">B.IQ:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 80%;"></div>
+                    <div class="progress-bar" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="prog_bar-box">
-                <label class="p_text-dialogue" for="health">DEX:</label>
+                <label class="p_text-dialogue">DEX:</label>
                 <div class="progress-meter">
-                    <div class="progress-bar health" style="width: 30%;"></div>
+                    <div class="progress-bar" style="width: 30%;"></div>
                 </div>
             </div>
         </div>
@@ -315,6 +316,12 @@
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTARIO</p>
         <p class="p_text-dialogue item-qtd"></p>
+        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
+        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+            <option value="none">Todos</option>
+            <option value="C+">C+</option>
+            <option value="B">B</option>
+        </select>
         <div class="character-grid inventory-container"></div>
     </div>
 
@@ -415,7 +422,7 @@
             {
                 name: "BASEBALL BAT",
                 image: "../images/strike4.png",
-                rarity: "RARIDADE: C+",
+                rarity: "C+",
                 rarity_color: "white",
                 link: "",
                 description: "A arma favorita da Dess, um taco de baseball natalino que ela normalmente carrega. Sempre conveniente."
@@ -423,7 +430,7 @@
             {
                 name: "CHECKED SHIRT",
                 image: "../images/checked-shirt.png",
-                rarity: "RARIDADE: B",
+                rarity: "B",
                 rarity_color: "white",
                 link: "",
                 description: "Uma camisa xadrez vermelha aconchegante. Dess queria de presente de natal quando mais nova, seria legal se parecer com os adolescentes skatistas."

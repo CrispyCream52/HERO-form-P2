@@ -8,9 +8,11 @@
     <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
 </head>
 <body>
+    <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
+    
 
     <nav id="navbar">
         <ul>
@@ -87,25 +89,6 @@
     <footer>
         <p id="footer-txt">Fugimura Kenji, 2026 - All the rights reserved.</p>
     </footer>
-    <script>
-        const date = new Date();
-        const hour = date.getHours();
-        const salute_p = document.querySelector(".salute-p");
-        const lang = window.location.pathname;
-        const isEN = lang.includes("/en/");
-
-        let salute = "";
-
-        if(hour >= 5 && hour < 12){
-            salute = isEN ? "Good morning," : "Bom dia,";
-        }
-        else if(hour >= 12 && hour < 18){
-            salute = isEN ? "Good afternoon," : "Boa tarde,";
-        } else {
-            salute = isEN ? "Good evening," : "Boa noite,";
-        }
-        salute_p.textContent = salute;
-    </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>
 </body>

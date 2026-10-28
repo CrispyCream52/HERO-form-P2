@@ -1,3 +1,6 @@
+const path = window.location.pathname;
+const isEN = path.includes("/en/");
+
 window.addEventListener("load", () => {
     const hover_snd = document.getElementById("hover-snd");
     const click_snd = document.getElementById("click-snd");
@@ -54,19 +57,36 @@ function mobileMenu(){
         menu_opt.textContent = "Close";
         menu_opt.classList.add("selected-opt-mobile");
     }
-    else{
+    else {
         menu.classList.add("hidden-menu");
         menu_opt.textContent = "Menu";
         menu_opt.classList.remove("selected-opt-mobile");
     }
 }
 
+if(path.includes("/index.html")){
+    const date = new Date();
+    const hour = date.getHours();
+    const salute_p = document.querySelector(".salute-p");
+
+    let salute = "";
+
+    if(hour >= 5 && hour < 12){
+        salute = isEN ? "Good morning," : "Bom dia,";
+    }
+    else if(hour >= 12 && hour < 18){
+        salute = isEN ? "Good afternoon," : "Boa tarde,";
+    } 
+    else {
+        salute = isEN ? "Good evening," : "Boa noite,";
+    }
+    salute_p.textContent = salute;
+}
+
 function readMore(){
     const more_text = document.querySelector("#about-more");
     const more_btn = document.querySelector(".readmore-text");
-    const lang = window.location.pathname;
-    
-    const isEN = lang.includes("/en/");
+
     const isVisible = more_text.classList.contains("more-text");
     more_text.classList.toggle("more-text", !isVisible);
 
@@ -137,59 +157,72 @@ function getStronger(){
 }
 
 
-function inventoryGen(item) {
-    const card = document.createElement("div");
-    card.classList.add("abilities-box");
+if(path.includes("/paige.html") || path.includes("/december.html")){
+    function inventoryGen(item) {
+        const card = document.createElement("div");
+        card.classList.add("abilities-box", "item-card");
 
-    const name = document.createElement("p");
-    name.classList.add("ability-name");
-    name.textContent = item.name;
-    card.appendChild(name);
+        const name = document.createElement("p");
+        name.classList.add("ability-name");
+        name.textContent = item.name;
+        card.appendChild(name);
 
-    const cardImg = document.createElement("img");
-    cardImg.classList.add("ability-icon");
-    cardImg.src = item.image;
-    cardImg.alt = item.name;
+        const cardImg = document.createElement("img");
+        cardImg.classList.add("ability-icon");
+        cardImg.src = item.image;
+        cardImg.alt = item.name;
 
-    if (item.link != "") {
-        const cardImgLink = document.createElement("a");
-        cardImgLink.href = item.link;
-        cardImgLink.style.cursor = "default";
+        if (item.link != "") {
+            const cardImgLink = document.createElement("a");
+            cardImgLink.href = item.link;
+            cardImgLink.style.cursor = "default";
 
-        cardImgLink.appendChild(cardImg);
-        card.appendChild(cardImgLink);
-    } else {
-        card.appendChild(cardImg);
+            cardImgLink.appendChild(cardImg);
+            card.appendChild(cardImgLink);
+        } else {
+            card.appendChild(cardImg);
+        }
+
+        const rarity = document.createElement("p");
+        rarity.classList.add("item-rarity");
+        rarity.textContent = isEN ? `RARITY: ${item.rarity}`: `RARIDADE: ${item.rarity}`;
+
+        if (item.rarity_color !== "") {
+            rarity.style.color = item.rarity_color;
+        }
+
+        card.appendChild(rarity);
+
+        const description = document.createElement("p");
+        description.classList.add("character-desc");
+        description.textContent = item.description;
+        card.appendChild(description);
+
+        const qtd_label = document.querySelector(".item-qtd");
+        let item_qtd = items.length;
+        qtd_label.textContent = `TOTAL: ${item_qtd}`;
+
+        return card;
     }
 
-    const rarity = document.createElement("p");
-    rarity.classList.add("item-rarity");
-    rarity.textContent = item.rarity;
+    const inventoryContainer = document.querySelector(".inventory-container");
 
-    if (item.rarity_color !== "") {
-        rarity.style.color = item.rarity_color;
+    items.forEach(function(item) {
+        const card = inventoryGen(item);
+        inventoryContainer.appendChild(card);
+    });
+
+    function rarityFilter(rarity) {
+        inventoryContainer.innerHTML = "";
+
+        items.forEach(function(item) {
+            if(rarity == "none"  || item.rarity == rarity){
+                const card = inventoryGen(item);
+                inventoryContainer.appendChild(card);
+            }
+        });
     }
-
-    card.appendChild(rarity);
-
-    const description = document.createElement("p");
-    description.classList.add("character-desc");
-    description.textContent = item.description;
-    card.appendChild(description);
-
-    const qtd_label = document.querySelector(".item-qtd");
-    let item_qtd = items.length;
-    qtd_label.textContent = `TOTAL: ${item_qtd}`;
-
-    return card;
 }
-
-const inventoryContainer = document.querySelector(".inventory-container");
-
-items.forEach(function(item) {
-    const card = inventoryGen(item);
-    inventoryContainer.appendChild(card);
-});
 
 function garbageNoise(){
     const smile = new Audio("../sounds/snd_smile.wav");
