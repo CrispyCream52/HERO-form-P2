@@ -16,7 +16,7 @@ body {
 
 .dark-mode {
     background: linear-gradient(#0a0a1b, #0e0e25, #0a0a1b);
-    .pines { mix-blend-mode: luminosity; opacity: 0.5; }
+    .pines { filter: brightness(0.5) grayscale(1); }
     #title { mix-blend-mode: luminosity; }
 }
 
@@ -961,6 +961,13 @@ figure figcaption {
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+}
+
+.lv-up-txt {
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+    visibility: hidden;
 }
 
 /* menu dos personagens ok foda */

@@ -1,5 +1,6 @@
 const path = window.location.pathname;
 const isEN = path.includes("/en/");
+//let isDarkMode = document.body.classList.contains("dark-mode");
 
 window.addEventListener("load", () => {
     const hover_snd = document.getElementById("hover-snd");
@@ -110,6 +111,8 @@ function getStronger(){
     const nextLevelDisplays = document.querySelectorAll(".next-lvl-display");
     const levelDisplay = document.querySelector(".current-lvl-display");
     const standaloneLevelDisplays = document.querySelectorAll(".scurrent-lvl-display");
+
+    const lv_up_txt = document.querySelector(".lv-up-txt");
     
     current_exp += 2;
 
@@ -119,6 +122,9 @@ function getStronger(){
 
         lvlup_snd.currentTime = 0;
         lvlup_snd.play();
+
+        lv_up_txt.style.visibility = "visible";
+        setTimeout(() => { lv_up_txt.style.visibility = "hidden"; }, 2000);
 
         level++;
     }
@@ -241,7 +247,7 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
 
         const cost = document.createElement("p");
         cost.classList.add("ability-cost");
-        cost.textContent = isEN ? `COST: ${ability.cost}`: `CUSTO: ${ability.cost}`;
+        cost.textContent = isEN ? `COST: ${ability.cost}%`: `CUSTO: ${ability.cost}%`;
 
         card.appendChild(cost);
 
@@ -266,6 +272,10 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
 }
 
 if(path.includes("/contact.html")){
+    /*let character = document.getElementById("redacted");
+    if (isDarkMode) character.src = "../images/ERAM_idle-up.png";
+    else character.src = "../images/lostgirl.png";*/
+
     let name_field = document.getElementById("name");
     let email_field = document.getElementById("email");
     let comment_field = document.getElementById("comment");
@@ -285,6 +295,12 @@ if(path.includes("/contact.html")){
     name_field.addEventListener("input", verifyFields);
     email_field.addEventListener("input", verifyFields);
     comment_field.addEventListener("input", verifyFields);
+
+    submit_btn.addEventListener("click", () => {
+        submit_btn.textContent = isEN ? "SENT" : "ENVIADO";
+        setTimeout(() => { submit_btn.textContent = isEN ? "SEND" : "ENVIAR"; }, 2000);
+    });
+
     reset_btn.addEventListener("click", () => { submit_btn.disabled = true });
 }
 
@@ -295,13 +311,9 @@ function garbageNoise(){
     ring.volume = 0.5;
 
     setTimeout(() => { ring.play(); }, 1000);
-    setTimeout(() => {
-        smile.play();
-    }, 4000);
+    setTimeout(() => { smile.play(); }, 4000);
 
-    setTimeout(() => {
-        alert("Nothing but garbage noise.");
-    }, 9999);
+    setTimeout(() => { alert("Nothing but garbage noise."); }, 9999);
 }
 function smile(){
     const smile = new Audio("../music/premonition.mp3");
@@ -310,44 +322,28 @@ function smile(){
     ring.volume = 0.5;
 
     setTimeout(() => { ring.play(); }, 1000);
-    setTimeout(() => {
-        smile.play();
-    }, 5000);
+    setTimeout(() => { smile.play(); }, 5000);
 
 }
 
 function dogdollar(){
-    setTimeout(() => {
-        alert("A dollar with a certain dog on it.", "Description");
-    }, 200);
+    setTimeout(() => { alert("A dollar with a certain dog on it.", "Description"); }, 200);
 }
 function noodles(){
-    setTimeout(() => {
-        alert("Comes with everything you need for a quick meal!", "Description");
-    }, 200);
+    setTimeout(() => { alert("Comes with everything you need for a quick meal!", "Description"); }, 200);
 }
 function purecrystal(){
-    setTimeout(() => {
-        alert("You can see the skies while peering inside it's structure.", "Description");
-    }, 200);
+    setTimeout(() => { alert("You can see the skies while peering inside it's structure.", "Description"); }, 200);
 }
 function shadowcrystal(){
-    setTimeout(() => {
-        alert("A sharp shadow moves like water in the hand.", "Description");
-    }, 200);
+    setTimeout(() => { alert("A sharp shadow moves like water in the hand.", "Description"); }, 200);
 }
 function egg(){
-    setTimeout(() => {
-        alert("Not too important, not too unimportant.", "Description");
-    }, 200);
+    setTimeout(() => { alert("Not too important, not too unimportant.", "Description"); }, 200);
 }
 function astronautfood(){
-    setTimeout(() => {
-        alert("For feeding a pet astronaut.", "Description");
-    }, 200);
+    setTimeout(() => { alert("For feeding a pet astronaut.", "Description"); }, 200);
 }
 function quiche(){
-    setTimeout(() => {
-        alert("A spinach egg pie almost psychologically damaged.", "Description");
-    }, 200);
+    setTimeout(() => { alert("A spinach egg pie almost psychologically damaged.", "Description"); }, 200);
 }

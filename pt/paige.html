@@ -317,13 +317,15 @@
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTARIO</p>
         <p class="p_text-dialogue item-qtd"></p>
-        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
-        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
-            <option value="none">Todos</option>
-            <option value="A+">A+</option>
-            <option value="S-">S-</option>
-            <option value="SSS+">SSS+</option>
-        </select>
+        <div class="filter-container">
+            <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
+            <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+                <option value="none">Todos</option>
+                <option value="A+">A+</option>
+                <option value="S-">S-</option>
+                <option value="SSS+">SSS+</option>
+            </select>
+        </div>
         <div class="character-grid inventory-container"></div>
     </div>
 
@@ -422,6 +424,14 @@
 
         const items = [
             {
+                name: "HEADBAND",
+                image: "../images/horned-headband.png",
+                rarity: "A+",
+                rarity_color: "#ffff00",
+                link: "",
+                description: "Uma tiara vermelha que possui chifres vermelhos. Cai bem no Halloween."
+            },
+            {
                 name: "DARK SWORD",
                 image: "../images/darkswd.png",
                 rarity: "A+",
@@ -444,6 +454,14 @@
                 rarity_color: "#6f1cff",
                 link: "device_index.html",
                 description: "Fragmento de algo em forma de adaga. Acerta a fraqueza de inimigos de elemento DARK."
+            },
+            {
+                name: "███████ KEY",
+                image: "../images/shelter-key.png",
+                rarity: "SSS+",
+                rarity_color: "#6f1cff",
+                link: "",
+                description: "Uma chave vermelha enferrujada feita de cobre. Voce se pergunta o que ela deve abrir."
             },
         ];
 

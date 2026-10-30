@@ -298,12 +298,14 @@
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTARIO</p>
         <p class="p_text-dialogue item-qtd"></p>
-        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
-        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
-            <option value="none">Todos</option>
-            <option value="C+">C+</option>
-            <option value="B">B</option>
-        </select>
+        <div class="filter-container">
+            <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTRO</label>
+            <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+                <option value="none">Todos</option>
+                <option value="B">B</option>
+                <option value="C+">C+</option>    
+            </select>
+        </div>
         <div class="character-grid inventory-container"></div>
     </div>
 
