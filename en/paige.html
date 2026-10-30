@@ -311,44 +311,22 @@
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">ABILITIES</p>
-        <div class="character-grid">
-            <div class="abilities-box">
-                <p class="ability-name">P-ACTION</p>
-                <img src="../images/p-action.png" class="ability-icon">
-                <p class="ability-cost">COST: 0% TP</p>
-                <p class="character-desc">Paige can act by their own in battle instead of fighting, no need of a leader to perform P-ACTION.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">FRIENDLINGS</p>
-                <img src="../images/friend-head.png" class="ability-icon">
-                <p class="ability-cost">COST: 15% TP</p>
-                <p class="character-desc">Heals 30HP to the current party, but increases cat-based damage by 5 each time used. +1 friend.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">HERDING</p>
-                <img src="../images/friendling horde.png" class="ability-icon">
-                <p class="ability-cost">COST: 66% TP</p>
-                <p class="character-desc">Uses a friend horde to attack against the opponent, 1 friend per friendling stacked.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">PURIFICATION</p>
-                <img src="../images/purification.png" class="ability-icon">
-                <p class="ability-cost">COST: 100% TP</p>
-                <p class="character-desc">Creates a pillar of pure light that erradicates any darkness, cat-based damage returns to zero.</p>
-            </div>
-        </div>
+        <p class="p_text-dialogue ability-qtd"></p>
+        <div class="character-grid ability-container"></div>
     </div>
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTORY</p>
         <p class="p_text-dialogue item-qtd"></p>
-        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTER</label>
-        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
-            <option value="none">All</option>
-            <option value="A+">A+</option>
-            <option value="S-">S-</option>
-            <option value="SSS+">SSS+</option>
-        </select>
+        <div class="filter-container">
+            <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTER</label>
+            <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+                <option value="none">All</option>
+                <option value="A+">A+</option>
+                <option value="S-">S-</option>
+                <option value="SSS+">SSS+</option>
+            </select>
+        </div>
         <div class="character-grid inventory-container"></div>
     </div>
 
@@ -470,7 +448,34 @@
                 link: "device_index.html",
                 description: "A dagger-like shard of something else. Strikes the weakness of dark-element enemies."
             },
-        ]
+        ];
+
+        const abilities = [
+            {
+                name: "P-ACTION",
+                image: "../images/p-action.png",
+                cost: 0,
+                description: "Paige can act by their own in battle instead of fighting, no need of a leader to perform P-ACTION."
+            },
+            {
+                name: "FRIENDLINGS",
+                image: "../images/friend-head.png",
+                cost: 15,
+                description: "Heals 30HP to the current party, but increases cat-based damage by 5 each time used. +1 friend."
+            },
+            {
+                name: "HERDING",
+                image: "../images/friendling horde.png",
+                cost: 66,
+                description: "Uses a friend horde to attack against the opponent, 1 friend per friendling stacked."
+            },
+            {
+                name: "PURIFICATION",
+                image: "../images/purification.png",
+                cost: 100,
+                description: "Creates a pillar of pure light that erradicates any darkness, cat-based damage returns to zero."
+            }
+        ];
     </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>

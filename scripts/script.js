@@ -222,6 +222,47 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
             }
         });
     }
+
+    function abilityGen(ability) {
+        const card = document.createElement("div");
+        card.classList.add("abilities-box");
+
+        const name = document.createElement("p");
+        name.classList.add("ability-name");
+        name.textContent = ability.name;
+        card.appendChild(name);
+
+        const cardImg = document.createElement("img");
+        cardImg.classList.add("ability-icon");
+        cardImg.src = ability.image;
+        cardImg.alt = ability.name;
+
+        card.appendChild(cardImg);
+
+        const cost = document.createElement("p");
+        cost.classList.add("ability-cost");
+        cost.textContent = isEN ? `COST: ${ability.cost}`: `CUSTO: ${ability.cost}`;
+
+        card.appendChild(cost);
+
+        const description = document.createElement("p");
+        description.classList.add("character-desc");
+        description.textContent = ability.description;
+        card.appendChild(description);
+
+        const qtd_label = document.querySelector(".ability-qtd");
+        let ability_qtd = abilities.length;
+        qtd_label.textContent = `TOTAL: ${ability_qtd}`;
+
+        return card;
+    }
+
+    const ability_container = document.querySelector(".ability-container");
+
+    abilities.forEach(function(ability) {
+        const card = abilityGen(ability);
+        ability_container.appendChild(card);
+    });
 }
 
 function garbageNoise(){

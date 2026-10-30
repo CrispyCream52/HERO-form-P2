@@ -310,32 +310,8 @@
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">HABILIDADES</p>
-        <div class="character-grid">
-            <div class="abilities-box">
-                <p class="ability-name">P-ACTION</p>
-                <img src="../images/p-action.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 0% TP</p>
-                <p class="character-desc">Paige pode atuar por conta propria dentro do campo de batalha, sem necessidade de um lider para P-ACTION.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">FRIENDLINGS</p>
-                <img src="../images/friend-head.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 15% TP</p>
-                <p class="character-desc">Regenera 30HP para a alianca atual, mas aumenta dano baseado em gato por 5 a cada uso. +1 friend.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">HERDING</p>
-                <img src="../images/friendling horde.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 66% TP</p>
-                <p class="character-desc">Utiliza uma horda de friends para atacar o oponente, 1 friend por friendling armazenado.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">PURIFICATION</p>
-                <img src="../images/purification.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 100% TP</p>
-                <p class="character-desc">Cria um pilar de pura luz que erradica qualquer escuridao, dano baseado em gato volta ao zero.</p>
-            </div>
-        </div>
+        <p class="p_text-dialogue ability-qtd"></p>
+        <div class="character-grid ability-container"></div>
     </div>
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
@@ -469,7 +445,34 @@
                 link: "device_index.html",
                 description: "Fragmento de algo em forma de adaga. Acerta a fraqueza de inimigos de elemento DARK."
             },
-        ]
+        ];
+
+        const abilities = [
+            {
+                name: "P-ACTION",
+                image: "../images/p-action.png",
+                cost: 0,
+                description: "Paige pode atuar por conta propria dentro do campo de batalha, sem necessidade de um lider para P-ACTION."
+            },
+            {
+                name: "FRIENDLINGS",
+                image: "../images/friend-head.png",
+                cost: 15,
+                description: "Regenera 30HP para a alianca atual, mas aumenta dano baseado em gato por 5 a cada uso. +1 friend."
+            },
+            {
+                name: "HERDING",
+                image: "../images/friendling horde.png",
+                cost: 66,
+                description: "Utiliza uma horda de friends para atacar o oponente, 1 friend por friendling armazenado."
+            },
+            {
+                name: "PURIFICATION",
+                image: "../images/purification.png",
+                cost: 100,
+                description: "Cria um pilar de pura luz que erradica qualquer escuridao, dano baseado em gato volta ao zero."
+            }
+        ];
     </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>

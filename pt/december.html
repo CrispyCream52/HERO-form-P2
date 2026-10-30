@@ -291,26 +291,8 @@
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">HABILIDADES</p>
-        <div class="character-grid">
-            <div class="abilities-box">
-                <p class="ability-name">D-ACTION</p>
-                <img src="../images/p-action.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 0% TP</p>
-                <p class="character-desc">Dess pode agir em batalha ao inves de lutar, apenas caso ela queira.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">HOME RUN</p>
-                <img src="../images/home-run.png" class="ability-icon">
-                <p class="ability-cost">CUSTO: 30% TP</p>
-                <p class="character-desc">Avanca em direcao ao oponente com velocidade maxima e acerta com seus chifres. Cansa inimigos e reduz defesa.</p>
-            </div>
-            <div class="abilities-box">
-                <p class="ability-name">STRIKE 4</p>
-                <img src="../images/strike4.png" class="ability-icon">
-                <p class="ability-cost">COST: 45% TP</p>
-                <p class="character-desc">50% de chance de rebater ataques e acertar os oponentes com sua arma, 75% caso use a baseball bat.</p>
-            </div>
-        </div>
+        <p class="p_text-dialogue ability-qtd"></p>
+        <div class="character-grid ability-container"></div>
     </div>
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
@@ -435,7 +417,28 @@
                 link: "",
                 description: "Uma camisa xadrez vermelha aconchegante. Dess queria de presente de natal quando mais nova, seria legal se parecer com os adolescentes skatistas."
             },
-        ]
+        ];
+
+        const abilities = [
+            {
+                name: "D-ACTION",
+                image: "../images/p-action.png",
+                cost: 0,
+                description: "Dess pode agir em batalha ao inves de lutar, apenas caso ela queira."
+            },
+            {
+                name: "HOME RUN",
+                image: "../images/home-run.png",
+                cost: 30,
+                description: "Avanca em direcao ao oponente com velocidade maxima e acerta com seus chifres. Cansa inimigos e reduz defesa."
+            },
+            {
+                name: "STRIKE 4",
+                image: "../images/strike4.png",
+                cost: 45,
+                description: "50% de chance de rebater ataques e acertar os oponentes com sua arma, 75% caso use a baseball bat."
+            }
+        ];
     </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>

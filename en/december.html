@@ -289,20 +289,22 @@
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">ABILITIES</p>
-        <div class="character-grid">
-            <div class="abilities-box"></div>
+        <p class="p_text-dialogue ability-qtd"></p>
+        <div class="character-grid ability-container"></div>
     </div>
 
     <div class="character-wrapper-box" style="margin-top: 15px;">
         <p class="c_txt_topics-dialogue">INVENTORY</p>
         <p class="p_text-dialogue item-qtd"></p>
-        <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTER</label>
-        <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
-            <option value="none">All</option>
-            <option value="A+">A+</option>
-            <option value="S-">S-</option>
-            <option value="SSS+">SSS+</option>
-        </select>
+        <div class="filter-container">
+            <label for="rarity-filter" class="p_text-dialogue" style="font-size: 20px;">FILTER</label>
+            <select name="rarity" id="rarity-filter" onchange="rarityFilter(this.value)">
+                <option value="none">All</option>
+                <option value="A+">A+</option>
+                <option value="S-">S-</option>
+                <option value="SSS+">SSS+</option>
+            </select>
+        </div>
         <div class="character-grid inventory-container"></div>
     </div>
 
@@ -415,6 +417,27 @@
                 rarity_color: "white",
                 link: "",
                 description: "A cozy, red plaid shirt. Dess wanted it for christmas when younger, it would be cool to look like those teenager skaters."
+            }
+        ];
+
+        const abilities = [
+            {
+                name: "D-ACTION",
+                image: "../images/p-action.png",
+                cost: 0,
+                description: "Dess can act by their own in battle instead of fighting, only if she means it."
+            },
+            {
+                name: "HOME RUN",
+                image: "../images/home-run.png",
+                cost: 30,
+                description: "Charges against the opponent with full speed and hit them with your antlers. Tire enemies and reduces defense."
+            },
+            {
+                name: "STRIKE 4",
+                image: "../images/strike4.png",
+                cost: 45,
+                description: "50% chance of deflect incoming attacks and hit the opponent with your weapon, 75% if using baseball bat."
             }
         ];
     </script>
