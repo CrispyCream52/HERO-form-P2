@@ -265,6 +265,29 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
     });
 }
 
+if(path.includes("/contact.html")){
+    let name_field = document.getElementById("name");
+    let email_field = document.getElementById("email");
+    let comment_field = document.getElementById("comment");
+    let emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const submit_btn = document.getElementById("submit-btn");
+    const reset_btn = document.getElementById("reset-btn");
+
+    function verifyFields(){
+        if(name_field.value.trim() == "" || comment_field.value.trim() == "" || 
+        !emailFormat.test(email_field.value.trim())){
+            submit_btn.disabled = true;
+        }
+        else submit_btn.disabled = false;
+    }
+
+    name_field.addEventListener("input", verifyFields);
+    email_field.addEventListener("input", verifyFields);
+    comment_field.addEventListener("input", verifyFields);
+    reset_btn.addEventListener("click", () => { submit_btn.disabled = true });
+}
+
 function garbageNoise(){
     const smile = new Audio("../sounds/snd_smile.wav");
     smile.volume = 0.5;

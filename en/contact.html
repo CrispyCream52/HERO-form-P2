@@ -53,15 +53,15 @@
             <h1>SEND A MESSAGE</h1>
             <form class="contact-form" target="_blank" action="mailto:ishigori.hondo@mail.com" method="post" enctype="text/plain">
                 <label for="name">Full name:</label><br>
-                <input type="text" class="form-field" name="name" id="name" placeholder="Your name."><br>
+                <input type="text" class="form-field" name="name" id="name" placeholder="Your name." autocomplete="on"><br>
                 <label for="email">Email:</label><br>
-                <input type="email" class="form-field" name="email" id="email" placeholder="Your email."><br>
+                <input type="email" class="form-field" name="email" id="email" placeholder="Your email." autocomplete="on"><br>
                 <label for="comment">Content:</label><br>
                 <textarea name="comment" id="comment" placeholder="Your message goes here." style="height: 200px;"></textarea><br>
 
                 <div class="form-btn-wrapper">
-                    <button type="submit" onclick="verify(event)" class="form-btn send-b enabled-snd">SEND</button>
-                    <button type="reset" class="form-btn clear-b enabled-snd">CLEAR</button>
+                    <button type="submit" id="submit-btn" class="form-btn send-b enabled-snd" disabled>SEND</button>
+                    <button type="reset" id="reset-btn" class="form-btn clear-b enabled-snd">CLEAR</button>
                 </div>
             </form>
         </div>
@@ -188,23 +188,6 @@
     <footer>
         <p id="footer-txt">Fugimura Kenji, 2026 - All the rights reserved.</p>
     </footer>
-    <script>
-        function verify(){
-            let name = document.querySelector("#name").value;
-            let email = document.querySelector("#email").value;
-            let emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            let comment = document.querySelector("#comment").value;
-
-            if(name.trim() === "" || email.trim() === "" || comment.trim() === ""){
-                alert("Fill all the fields.");
-                event.preventDefault();
-            }
-            else if(!emailFormat.test(email)){
-                alert("Use a valid email.");
-                event.preventDefault();
-            }
-        }
-    </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>
 </body>

@@ -474,6 +474,13 @@ figure figcaption {
 .send-b:hover {
     background-color: #008da0;
 }
+.send-b:disabled {
+    background-color: gray;
+    cursor: default;
+}
+.send-b:disabled:hover {
+    background-color: gray;
+}
 .clear-b {
     background-color: #ff0000;
 }
