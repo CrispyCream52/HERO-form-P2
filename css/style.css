@@ -36,6 +36,10 @@ body {
 #understand-btn.fadein { 
     opacity: 1; 
 }
+#understand-btn:disabled {
+    border-color: gray;
+    color: gray;
+}
 
 .centered {
     display: flex;
@@ -338,9 +342,11 @@ footer {
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    margin: 20px 0px 20px 0px;
+    justify-content: center;
+    margin: 20px auto;
+    width: fit-content;
+    max-width: 100%;
 }
 .buttons a {
     text-decoration: none;
@@ -553,6 +559,38 @@ figure figcaption {
 .clear-b:hover {
     background-color: #a00093;
 }
+
+.email-container {
+    width: calc(90% - 20px); 
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.email-title {
+    font-family: 'dtm-sans';
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    text-align: justify;
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.66);
+}
+
+.email-link, .email-link a, .email-link-mobile, .email-link-mobile a {
+    font-family: 'dtm-sans';
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    text-align: justify;
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.66);
+}
+.email-link { display: none; }
+.email-link a:hover {
+    color: #ffff00;
+}
+
+.email-link-mobile { display: block; }
 
 /* MENU DE STATUS (characters.html) */
 .oc_container {
@@ -1262,6 +1300,8 @@ figure figcaption {
     .characters img { width: 250px; }
     .characters-info { margin-top: 5px; padding: 5px; }
     #table-credits { transform: scale(1); }
+    .email-link { display: block; }
+    .email-link-mobile { display: none; }
 }
 
 @media (min-width: 701px) {
