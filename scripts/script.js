@@ -105,7 +105,7 @@ function mobileMenu(){
     }
 }
 
-if(path.includes("/index.html")){
+if(isHome){
     /* mensagem de saudações */
     const date = new Date();
     const hour = date.getHours();
