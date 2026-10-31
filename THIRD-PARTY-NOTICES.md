@@ -45,13 +45,6 @@ Each item remains subject to the intellectual property rights, license terms, an
 - **Files used:** music/premonition.mp3
 - **License / Permission:** All rights reserved
 
-- **Title:** OMINOUS_NOWAYBACK.OGG
-- **Original work:** DELTARUNE Chapter 7B UST
-- **Author / Rights holder:** DanlyDaMusician
-- **Source:** https://www.youtube.com/watch?v=bFigUVHwug0
-- **Files used:** music/OMINOUS_NOWAYBACK.mp3
-- **License / Permission:** All rights reserved
-
 ### 1.2 Sound Effects
 
 - **Asset:** all

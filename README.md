@@ -11,7 +11,7 @@ This is the full project itself, with everything that I've planned so far + the 
 Whilst HERO-form-P2 meets all the requirements of the project, many of its features are not to my liking, precisely because they deviate from the original premise or do not enhance QoL, nor the user experience. Therefore, MANTLE-original is the original project, containing only the features I had originally planned.
 
 ## FEATURES
- - Intro, characters, gallery and contact pages;
+ - Intro, characters, gallery, contact and credits pages;
  - full CSS responsiveness (mobile and desktop);
    - Sandwich menu;
    - Gallery carousel;
@@ -19,7 +19,7 @@ Whilst HERO-form-P2 meets all the requirements of the project, many of its featu
  - English (en) and Portuguese (pt-BR) support;
  - DELTARUNE's faithful visual identity;
  - Gestalt and the Seven UI principles;
- - Secret pages, hidden information and a game to be found.
+ - Secret pages, hidden informations and a game to be found.
 
 ## TOOLS
  - HTML5
@@ -39,7 +39,7 @@ In order to access the Figma prototype, you must upload the 'mantle.site' file i
 1. via .zip
 > Extract the package and open the 'index.html' file in a browser.
 2. via Github
-> Access the domain https://crispycream52.github.io/MANTLE-original
+> Access the domain https://crispycream52.github.io/HERO-form-P2/
 
 ## SCREENSHOTS
 

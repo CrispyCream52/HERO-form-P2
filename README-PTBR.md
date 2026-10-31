@@ -10,6 +10,37 @@ Este é o projeto completo, com tudo que tinha planejado + requisitos do edital.
 ### QUAL A DIFERENÇA ENTRE 'HERO-form-P2' E 'MANTLE-original'?
 Enquanto HERO-form-P2 atende a todos requisitos do edital, muitas das features não são de meu agrado justamente por destoar da premissa original, ou por não agregarem na QoL. Portanto, MANTLE-original é o projeto original, somente com as funcionalidades que tinha planejado.
 
+## RECURSOS
+ - Páginas de introdução, personagens, galeria, contato e créditos;
+ - Responsividade CSS completa (mobile e desktop);
+   - Menu sandwich;
+   - Carrossel da galeria;
+   - Adaptação do menu dos personagens;
+ - Suporte para inglês (en) e português (pt-BR);
+ - Identidade visual fiel a de DELTARUNE;
+ - Gestalt e os Sete Princípios de UI;
+ - Páginas secretas, informações escondidas e um jogo a ser descoberto.
+
+## FERRAMENTAS
+ - HTML5
+ - CSS3
+ - JavaScript
+ - Figma
+ - GitHub
+ - Itch.io
+ - Kristal Engine v0.10.0
+
+#### SOBRE O PROTÓTIPO
+Em ordem para acessar o protótipo do Figma, você deve fazer upload do arquivo 'mantle.site' dentro do próprio.
+1. Acesse https://www.figma.com
+2. Clique na opção de 'mais' no dropdown localizado na navbar e então em 'importar'
+
+#### ACESSE O WEBSITE
+1. via .zip
+> Extraia o pacote e abra o arquivo 'index.html' em um navegador.
+2. via Github
+> Acesse o domínio https://crispycream52.github.io/HERO-form-P2/
+
 ## DECISÕES UX / UI
 
 Principalmente, por gosto pessoal e pelos visuais simples que o jogo oferece, decidi que o estilo que mais combinaria com meu trabalho seria trabalhar com um design minimalista.
