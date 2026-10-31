@@ -11,6 +11,7 @@
     <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_noise.wav" id="noise-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
     
     <nav id="navbar">
@@ -49,9 +50,10 @@
             <a class="obtain_btn enabled-snd" href="https://www.linkedin.com/in/vkf2007/" target="_blank"><img src="../images/linkedin.png"></a>
         </div>
 
+        <p class="p_text-dialogue form_feedback"></p>
         <div class="form-section">
             <h1>SEND A MESSAGE</h1>
-            <form class="contact-form" target="_blank" action="mailto:ishigori.hondo@mail.com" method="post" enctype="text/plain">
+            <form class="contact-form" target="_blank" action="mailto:crispycreamck@outlook.com" method="post" enctype="text/plain">
                 <label for="name">Full name:</label><br>
                 <input type="text" class="form-field" name="name" id="name" placeholder="Your name." autocomplete="on"><br>
                 <label for="email">Email:</label><br>
@@ -61,7 +63,7 @@
 
                 <div class="form-btn-wrapper">
                     <button type="submit" id="submit-btn" class="form-btn send-b enabled-snd" disabled>SEND</button>
-                    <button type="reset" id="reset-btn" class="form-btn clear-b enabled-snd">CLEAR</button>
+                    <button type="reset" id="reset-btn" class="form-btn clear-b">CLEAR</button>
                 </div>
             </form>
         </div>

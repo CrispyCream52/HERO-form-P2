@@ -14,10 +14,64 @@ body {
     --textbox-border: #fff;
 }
 
+#disclaimer-tab {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #000;
+    opacity: 1;
+    z-index: 1;
+    transition: 2s;
+}
+#disclaimer-tab.hide-info {
+    opacity: 0;
+}
+
+#understand-btn {
+    width: 200px; 
+    opacity: 0; 
+    cursor: default;
+    transition: 2s;
+}
+#understand-btn.fadein { 
+    opacity: 1; 
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.disclaimer-title {
+    font-family: 'dtm-sans';
+    font-size: 50px;
+    background: linear-gradient(#ff0000, #d400c3);
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+.disclaimer-textbox {
+    width: 80%;
+}
+
+.disclaimer-text {
+    font-family: 'dtm-sans';
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    text-shadow: 2px 2px 0px #2A2A72;
+}
+
 .dark-mode {
     background: linear-gradient(#0a0a1b, #0e0e25, #0a0a1b);
     .pines { filter: brightness(0.5) grayscale(1); }
     #title { mix-blend-mode: luminosity; }
+    #eram { display: flex;}
+    #dess { display: none;}
 }
 
 .depths {
@@ -295,6 +349,7 @@ footer {
 #marked {
     color: var(--highlight); 
     background-color: transparent;
+    text-decoration: none;
 }
 #marked-dark {
     color: var(--dark-highlight); 
@@ -303,13 +358,23 @@ footer {
 
 
 /* decorações very fuck */
-#redacted {
+#redacted, #dess {
     image-rendering: pixelated;
     height: 100px;
     width: auto;
     display: block;
     margin: auto;
-    padding: 100px 0px 30px 0px;
+}
+#redacted { padding: 100px 0px 30px 0px; }
+#dess { padding: 50% 0px 30px 0px; }
+#eram {
+    image-rendering: pixelated;
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: auto;
+    padding: 40% 0px 30px 0px;
+    display: none;
 }
 .pines {
     position: absolute;
@@ -319,6 +384,7 @@ footer {
     width: 100%;
     top: 80%; 
     visibility: hidden;
+    z-index: -1;
 }
 .pines img {
     width: 15%;
@@ -384,7 +450,7 @@ figure figcaption {
     max-height: 60%;
     object-fit: contain;
 }
-.obtain_btn:hover {
+.obtain_btn:not(.noHover):hover {
     transform: scale(1.03);
     cursor: pointer;
     border-color: var(--highlight);
@@ -960,14 +1026,37 @@ figure figcaption {
 .grind-btn-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
 }
 
 .lv-up-txt {
-    margin-bottom: 0;
+    margin: 40px 0 40px 0;
     padding: 0;
     text-align: center;
-    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+.lv-up-txt-appear {
+    opacity: 1;
+}
+
+.lv-up-txt {
+    font-family: 'dtm-sans';
+    font-size: 25px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, purple, red);
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    animation: rainbowText 1s linear infinite;
+}
+
+@keyframes rainbowText {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 /* menu dos personagens ok foda */

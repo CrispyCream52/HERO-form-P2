@@ -8,12 +8,30 @@
     <link rel="icon" type="image/x-icon" href="../images/small-soul.png">
 </head>
 <body>
+    <div id="disclaimer-tab" class="centered">
+        <p class="disclaimer-title">DISCLAIMER</p>
+        <div class="disclaimer-textbox">
+            <p class="disclaimer-text">
+                This project is unaffiliated with DELTARUNE or its creator (Robert F. "Toby" Fox).
+                Everything on this website should be regarded as non-canonical to the original work
+                and is not intended to generate any profit.
+            </p>
+            <p class="disclaimer-text">
+                All the visual assets (with the sole exception of IMAGES_DEPTHS used in the dark theme) 
+                where hand-made by myself. 
+                You can view the <a href="https://github.com/CrispyCream52/HERO-form-P2/blob/adfd5e9e15ce759f7dc4efc420ab2aa9a3b5ae1c/LICENSE.md" target="_blank" id="marked">license for this project here</a>, along with the respective credits for
+                <a href="https://github.com/CrispyCream52/HERO-form-P2/blob/main/THIRD-PARTY-NOTICES.md" target="_blank" id="marked">third-party assets used here</a>, such as SFX, fonts and musics.
+            </p>
+        </div>
+        <div class="buttons">
+            <button id="understand-btn" class="obtain_btn enabled-snd noHover" onclick="disclaimerState()" style="cursor: default;">I understand.</button>
+        </div>
+    </div>
     <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
     
-
     <nav id="navbar">
         <ul>
             <li id="menu-btn" class=" enabled-snd" onclick="mobileMenu()">Menu</li>

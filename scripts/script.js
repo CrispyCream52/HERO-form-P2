@@ -1,15 +1,33 @@
 const path = window.location.pathname;
 const isEN = path.includes("/en/");
-//let isDarkMode = document.body.classList.contains("dark-mode");
+let isDarkMode = document.body.classList.contains("dark-mode");
 
+/* Sistema da mensagem de disclaimer */
+function disclaimerState(){
+    const btn = document.getElementById("understand-btn");
+    let disclaimer_msg = document.getElementById("disclaimer-tab");
+    disclaimer_msg.classList.toggle("hide-info");
+    btn.disabled = true;
+
+    setTimeout(() => { disclaimer_msg.style.display = "none"; }, 2000);
+    localStorage.setItem("disclaimer", true);
+}
+
+if(localStorage.getItem("disclaimer") !== "true" && !path.endsWith("/index.html")){
+    window.location.href = "/index.html";
+}
+
+/* Som dos botões */
 window.addEventListener("load", () => {
     const hover_snd = document.getElementById("hover-snd");
     const click_snd = document.getElementById("click-snd");
+    const noise_snd = document.getElementById("noise-snd");
     const disabled_snd = document.getElementById("disabled-snd");
     const disabled_btns = document.querySelectorAll(".disabled-snd");
     const enabled_btns = document.querySelectorAll(".enabled-snd");
     const exp_snd = document.getElementById("exp-snd");
     const str_btn = document.querySelector(".grind-btn");
+    const reset_btn = document.getElementById("reset-btn");
 
     if(str_btn){
         str_btn.addEventListener("mouseenter", () => {
@@ -20,6 +38,18 @@ window.addEventListener("load", () => {
             exp_snd.currentTime = 0;
             exp_snd.volume = 0.5;
             exp_snd.play();
+        });
+    }
+
+    if(reset_btn){
+        reset_btn.addEventListener("mouseenter", () => {
+            hover_snd.currentTime = 0;
+            hover_snd.play();
+        });
+        reset_btn.addEventListener("click", () => {
+            noise_snd.currentTime = 0;
+            noise_snd.volume = 0.5;
+            noise_snd.play();
         });
     }
 
@@ -66,6 +96,7 @@ function mobileMenu(){
 }
 
 if(path.includes("/index.html")){
+    /* mensagem de saudações */
     const date = new Date();
     const hour = date.getHours();
     const salute_p = document.querySelector(".salute-p");
@@ -82,6 +113,25 @@ if(path.includes("/index.html")){
         salute = isEN ? "Good evening," : "Boa noite,";
     }
     salute_p.textContent = salute;
+
+
+    /* DISCLAIMER MESSAGE */
+    let disclaimer_tab = document.getElementById("disclaimer-tab");
+    if(localStorage.getItem("disclaimer") === "true") { disclaimer_tab.style.display = "none"; }
+
+    let understand_btn = document.getElementById("understand-btn");
+    understand_btn.disabled = true;
+
+    setTimeout(() => {
+        understand_btn.classList.toggle("fadein");
+        understand_btn.style.cursor = "pointer";
+
+        setTimeout(() => { 
+            understand_btn.style.transition = "0.1s"; 
+            understand_btn.classList.remove("noHover");
+            understand_btn.disabled = false;
+        }, 2000);
+    }, 5000);
 }
 
 function readMore(){
@@ -101,6 +151,7 @@ let total_exp = 50;
 let progress = 0;
 let level = 4;
 
+/* Barra de progresso */
 function getStronger(){
     const lvlup_snd = document.getElementById("lvlup-snd");
     lvlup_snd.volume = 0.5;
@@ -123,8 +174,8 @@ function getStronger(){
         lvlup_snd.currentTime = 0;
         lvlup_snd.play();
 
-        lv_up_txt.style.visibility = "visible";
-        setTimeout(() => { lv_up_txt.style.visibility = "hidden"; }, 2000);
+        lv_up_txt.classList.toggle("lv-up-txt-appear");
+        setTimeout(() => { lv_up_txt.classList.toggle("lv-up-txt-appear"); }, 1500);
 
         level++;
     }
@@ -164,6 +215,7 @@ function getStronger(){
 
 
 if(path.includes("/paige.html") || path.includes("/december.html")){
+    /* cards de items */
     function inventoryGen(item) {
         const card = document.createElement("div");
         card.classList.add("abilities-box", "item-card");
@@ -229,6 +281,7 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
         });
     }
 
+    /* cards de habilidades */
     function abilityGen(ability) {
         const card = document.createElement("div");
         card.classList.add("abilities-box");
@@ -271,10 +324,92 @@ if(path.includes("/paige.html") || path.includes("/december.html")){
     });
 }
 
+if(path.includes("/gallery.html")){
+    /* cards de artworks */
+    function cardGen(art) {
+        const card = document.createElement("div");
+        card.classList.add("art-box");
+
+        const cardImgLink = document.createElement("a");
+        cardImgLink.classList.add("enabled-snd");
+        cardImgLink.href = art.link;
+        cardImgLink.target = "_blank";
+
+        const cardImg = document.createElement("img");
+        cardImg.src = art.image;
+        cardImg.alt = art.title;
+
+        cardImgLink.appendChild(cardImg);
+        card.appendChild(cardImgLink);
+
+        const titleBox = document.createElement("div");
+        titleBox.classList.add("art-title-box");
+
+        const title = document.createElement("p");
+        title.classList.add("art-title");
+        title.textContent = art.title;
+
+        const data = document.createElement("p");
+        data.classList.add("art-date");
+        data.textContent = art.date;
+
+        titleBox.appendChild(title);
+        titleBox.appendChild(data);
+
+        const description = document.createElement("p");
+        description.classList.add("art-desc");
+
+        if(art.description != ""){
+            description.textContent = art.description;
+            titleBox.appendChild(description);
+        }
+        else{
+            description.textContent = "(NO DESCRIPTION.)";
+            titleBox.appendChild(description);
+        }
+        
+        const videoLink_p = document.createElement("p");
+        const videoLink = document.createElement("a");
+
+        if(art.video != ""){
+            videoLink.href = art.video;
+            videoLink.target = "_blank";
+            videoLink_p.classList.add("art-link", "enabled-snd");
+            videoLink_p.textContent = ">>See timelapse";
+            videoLink_p.style.cursor = "pointer";
+
+            videoLink.appendChild(videoLink_p);
+            titleBox.appendChild(videoLink);
+        }
+        else{
+            videoLink_p.classList.add("art-link");
+            videoLink_p.textContent = ".";
+            videoLink_p.style.opacity = 0;
+            titleBox.appendChild(videoLink_p);
+        }
+
+        card.appendChild(titleBox);
+        return card;
+    }
+
+    const specialsContainer = document.querySelector(".specials-carousel");
+    const artworksContainer = document.querySelector(".artworks-carousel");
+
+    specials.forEach(function(art) {
+        const card = cardGen(art);
+        specialsContainer.appendChild(card);
+    });
+
+    artworks.forEach(function(art) {
+        const card = cardGen(art);
+        artworksContainer.appendChild(card);
+    });    
+}
+
 if(path.includes("/contact.html")){
-    /*let character = document.getElementById("redacted");
-    if (isDarkMode) character.src = "../images/ERAM_idle-up.png";
-    else character.src = "../images/lostgirl.png";*/
+    /* validação do formulário */
+    const form = document.querySelector(".contact-form");
+    let feedback = document.querySelector(".form_feedback");
 
     let name_field = document.getElementById("name");
     let email_field = document.getElementById("email");
@@ -285,7 +420,7 @@ if(path.includes("/contact.html")){
     const reset_btn = document.getElementById("reset-btn");
 
     function verifyFields(){
-        if(name_field.value.trim() == "" || comment_field.value.trim() == "" || 
+        if(name_field.value.trim() === "" || comment_field.value.trim() === "" || 
         !emailFormat.test(email_field.value.trim())){
             submit_btn.disabled = true;
         }
@@ -296,9 +431,34 @@ if(path.includes("/contact.html")){
     email_field.addEventListener("input", verifyFields);
     comment_field.addEventListener("input", verifyFields);
 
-    submit_btn.addEventListener("click", () => {
-        submit_btn.textContent = isEN ? "SENT" : "ENVIADO";
-        setTimeout(() => { submit_btn.textContent = isEN ? "SEND" : "ENVIAR"; }, 2000);
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        feedback.style.color = "red";
+
+        if(name_field.value.trim() === "" || comment_field.value.trim() === ""){
+            feedback.textContent = isEN ? 
+            "Please, fill all the required fields." : 
+            "Por gentileza, preencha todos os campos obrigatórios.";
+            return;
+        }
+        if(!emailFormat.test(email_field.value.trim())){
+            feedback.textContent = isEN ? 
+            "Please, enter a valid email address." : 
+            "Por gentileza, use um endereço de email válido.";
+            return;
+        }
+
+        feedback.style.color = "white";
+        feedback.textContent = isEN ? 
+        "Opening your email application." : 
+        "Abrindo seu aplicativo de email.";
+
+        submit_btn.addEventListener("click", () => {
+            submit_btn.textContent = isEN ? "EMAIL SENT" : "EMAIL ENVIADO";
+            setTimeout(() => { submit_btn.textContent = isEN ? "SEND" : "ENVIAR"; }, 2000);
+        });
+
+        setTimeout(() => { form.submit(); }, 1000);
     });
 
     reset_btn.addEventListener("click", () => { submit_btn.disabled = true });

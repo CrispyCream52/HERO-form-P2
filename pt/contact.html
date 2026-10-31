@@ -11,6 +11,7 @@
     <div class="depths isHidden"></div>
     <audio src="../sounds/snd_menumove.wav" id="hover-snd"></audio>
     <audio src="../sounds/snd_select.wav" id="click-snd"></audio>
+    <audio src="../sounds/snd_noise.wav" id="noise-snd"></audio>
     <audio src="../sounds/snd_cantselect.wav" id="disabled-snd"></audio>
     
     <nav id="navbar">
@@ -51,17 +52,17 @@
 
         <div class="form-section">
             <h1>ENVIE UMA MENSAGEM</h1>
-            <form class="contact-form" target="_blank" action="mailto:ishigori.hondo@mail.com" method="post" enctype="text/plain">
+            <form class="contact-form" target="_blank" action="mailto:crispycreamck@outlook.com" method="post" enctype="text/plain">
                 <label for="name">Nome Completo:</label><br>
-                <input type="text" class="form-field" name="name" id="name" placeholder="Seu nome."><br>
+                <input type="text" class="form-field" name="name" id="name" placeholder="Seu nome." autocomplete="on"><br>
                 <label for="email">Email:</label><br>
-                <input type="email" class="form-field" name="email" id="email" placeholder="Seu email."><br>
+                <input type="email" class="form-field" name="email" id="email" placeholder="Seu email." autocomplete="on"><br>
                 <label for="comment">Conteúdo:</label><br>
                 <textarea name="comment" id="comment" placeholder="Sua mensagem vai aqui." style="height: 200px;"></textarea><br>
 
                 <div class="form-btn-wrapper">
-                    <button type="submit" onclick="verify(event)" class="form-btn send-b enabled-snd">ENVIAR</button>
-                    <button type="reset" class="form-btn clear-b enabled-snd">LIMPAR</button>
+                    <button type="submit" id="submit-btn" class="form-btn send-b enabled-snd" disabled>ENVIAR</button>
+                    <button type="reset" id="reset-btn" class="form-btn clear-b">LIMPAR</button>
                 </div>
             </form>
         </div>
@@ -182,32 +183,12 @@
         </div>
     </article>
     </main>
-    <img src="../images/lostgirl.png" alt="[REDACTED]" id="redacted">
+    <img src="../images/lostgirl.png" alt="[REDACTED]" id="dess">
+    <img src="../images/ERAM_idle-up.png" alt="[REDACTED]" id="eram">
     <hr>
     <footer>
         <p id="footer-txt">Fugimura Kenji, 2026 - Todos os direitos reservados.</p>
     </footer>
-    <script>
-        function verify(){
-            let name = document.querySelector("#name").value;
-            let email = document.querySelector("#email").value;
-            let emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            let comment = document.querySelector("#comment").value;
-
-            /*console.log("Nome:", name);
-            console.log("Email:", email);
-            console.log("Mensagem:", comment);*/
-
-            if(name.trim() === "" || email.trim() === "" || comment.trim() === ""){
-                alert("Fill all the fields.");
-                event.preventDefault();
-            }
-            else if(!emailFormat.test(email)){
-                alert("Use a valid email.");
-                event.preventDefault();
-            }
-        }
-    </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>
 </body>

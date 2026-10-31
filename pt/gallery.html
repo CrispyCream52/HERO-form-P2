@@ -121,6 +121,22 @@
 
         const artworks = [
             {
+                title: "Disease",
+                date: "10/30/2026",
+                description: "",
+                image: "https://64.media.tumblr.com/72e879652aad32aee0bac1e6df83124e/4a00f7d6bf749a15-97/s2048x3072/88d5b7afb015904a7aee0dedbd95aceb21ddf74c.jpg",
+                video: "https://youtu.be/VEZaMhR-aoI?si=ERLQDMVKkJSH8uC_",
+                link: "https://www.tumblr.com/crispycream52/831941023355863040/disease-delta%D1%8Fu%D0%B8%C7%9D-crispycream52?source=share"
+            },
+            {
+                title: "December Holiday - OC",
+                date: "10/22/2026",
+                description: "Find her.",
+                image: "https://64.media.tumblr.com/12506a085b1c837b2ec5d0b9a857551a/562a71eca004be16-1b/s2048x3072/68cb08c63ecda370bb6849d1dcffaffbd1d55d2a.jpg",
+                video: "https://youtu.be/kGuPCOoiMiY?si=YTQUR3oHkBa4gq1K",
+                link: "https://www.tumblr.com/crispycream52/831216040284389376/december-dess-holiday-delta%D1%8Fu%D0%B8%C7%9D-crispycream52?source=share"
+            },
+            {
                 title: "E-RAM - OC",
                 date: "10/15/2026",
                 description: "",
@@ -217,71 +233,6 @@
                 link: "https://www.tumblr.com/crispycream52/798893824058540032/choices-and-paths-a-chara-fan-art?source=share"
             }
         ];
-
-        function cardGen(art) {
-            const card = document.createElement("div");
-            card.classList.add("art-box");
-
-            const cardImgLink = document.createElement("a");
-            cardImgLink.classList.add("enabled-snd");
-            cardImgLink.href = art.link;
-            cardImgLink.target = "_blank";
-
-            const cardImg = document.createElement("img");
-            cardImg.src = art.image;
-            cardImg.alt = art.title;
-
-            cardImgLink.appendChild(cardImg);
-            card.appendChild(cardImgLink);
-
-            const titleBox = document.createElement("div");
-            titleBox.classList.add("art-title-box");
-
-            const title = document.createElement("p");
-            title.classList.add("art-title");
-            title.textContent = art.title;
-
-            const data = document.createElement("p");
-            data.classList.add("art-date");
-            data.textContent = art.date;
-
-            titleBox.appendChild(title);
-            titleBox.appendChild(data);
-
-            if(art.description != ""){
-                const description = document.createElement("p");
-                description.classList.add("art-desc");
-                description.textContent = art.description;
-
-                titleBox.appendChild(description);
-            }
-            if(art.video != ""){
-                const videoLink = document.createElement("p");
-                videoLink.classList.add("art-link", "enabled-snd");
-                videoLink.href = art.video;
-                videoLink.textContent = "See timelapse";
-                videoLink.target = "_blank";
-                videoLink.style.cursor = "pointer";
-
-                titleBox.appendChild(videoLink);
-            }
-
-            card.appendChild(titleBox);
-            return card;
-        }
-
-        const specialsContainer = document.querySelector(".specials-carousel");
-        const artworksContainer = document.querySelector(".artworks-carousel");
-
-        specials.forEach(function(art) {
-            const card = cardGen(art);
-            specialsContainer.appendChild(card);
-        });
-
-        artworks.forEach(function(art) {
-            const card = cardGen(art);
-            artworksContainer.appendChild(card);
-        });
     </script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/script.js"></script>
