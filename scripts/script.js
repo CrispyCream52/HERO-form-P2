@@ -2,6 +2,16 @@ const path = window.location.pathname;
 const isEN = path.includes("/en/");
 let isDarkMode = document.body.classList.contains("dark-mode");
 
+const basePath = path.includes("/HERO-form-P2") ?
+"/HERO-form-P2/" : "/";
+
+const homePath = isEN ?
+`${basePath}en/index.html` : `${basePath}pt/index.html`;
+
+const isHome =
+    path === `${basePath}pt/` || path === `${basePath}en/` ||
+    path === `${basePath}pt/index.html` || path === `${basePath}en/index.html`;
+
 /* Sistema da mensagem de disclaimer */
 function disclaimerState(){
     const btn = document.getElementById("understand-btn");
@@ -13,8 +23,8 @@ function disclaimerState(){
     localStorage.setItem("disclaimer", true);
 }
 
-if(localStorage.getItem("disclaimer") !== "true" && !path.endsWith("/index.html")){
-    window.location.href = "/index.html";
+if (localStorage.getItem("disclaimer") !== "true" && !isHome) {
+    window.location.replace(homePath);
 }
 
 /* Som dos botões */
@@ -123,7 +133,7 @@ if(path.includes("/index.html")){
     understand_btn.disabled = true;
 
     setTimeout(() => {
-        understand_btn.classList.toggle("fadein");
+        understand_btn.classList.add("fadein");
         understand_btn.style.cursor = "pointer";
 
         setTimeout(() => { 
