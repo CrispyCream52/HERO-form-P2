@@ -3,7 +3,7 @@ const isEN = path.includes("/en/");
 let isDarkMode = document.body.classList.contains("dark-mode");
 
 const basePath = path.includes("/HERO-form-P2") ?
-"/MANTLE-original/" : "/";
+"/HERO-form-P2/" : "/";
 
 const homePath = isEN ?
 `${basePath}en/index.html` : `${basePath}pt/index.html`;
@@ -15,23 +15,57 @@ const isHome =
 /* Sistema da mensagem de disclaimer */
 function disclaimerState(){
     const btn = document.getElementById("understand-btn");
-    let disclaimer_msg = document.getElementById("disclaimer-tab");
+    const disclaimer_msg = document.getElementById("disclaimer-tab");
+
+    if(!btn || !disclaimer_msg) return;
+    localStorage.setItem("disclaimer", true);
+
     disclaimer_msg.classList.toggle("hide-info");
     btn.disabled = true;
 
     setTimeout(() => { disclaimer_msg.style.display = "none"; }, 2000);
-    localStorage.setItem("disclaimer", true);
 }
 
-if (localStorage.getItem("disclaimer") !== "true" && !isHome) {
-    window.location.replace(homePath);
-}
-if(localStorage.getItem("disclaimer") === "true" && isHome) {
-    document.getElementById("disclaimer-tab").remove();
+function DisclaimerCheck(){
+    const accepted = localStorage.getItem("disclaimer") === "true";
+    const disclaimer = document.getElementById("disclaimer-tab");
+
+    if(!accepted && !isHome) {
+        window.location.replace(homePath);
+        return;
+    }
+    if(accepted && disclaimer) {
+        disclaimer.remove();
+    }
 }
 
 /* Som dos botões */
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
+    DisclaimerCheck();
+    const disclaimer = document.getElementById("disclaimer-tab");
+    const understand_btn = document.getElementById("understand-btn");
+
+    if(!disclaimer || !understand_btn) return;
+    if(localStorage.getItem("disclaimer") === "true") {
+        disclaimer.remove();
+        return;
+    }
+
+    understand_btn.disabled = true;
+
+    setTimeout(() => {
+        understand_btn.classList.add("fadein");
+        understand_btn.style.cursor = "pointer";
+
+        setTimeout(() => { 
+            understand_btn.style.transition = "0.1s"; 
+            understand_btn.classList.remove("noHover");
+            understand_btn.disabled = false;
+        }, 2000);
+    }, 5000);
+
+
+
     const hover_snd = document.getElementById("hover-snd");
     const click_snd = document.getElementById("click-snd");
     const noise_snd = document.getElementById("noise-snd");
@@ -126,25 +160,6 @@ if(isHome){
         salute = isEN ? "Good evening," : "Boa noite,";
     }
     salute_p.textContent = salute;
-
-
-    /* DISCLAIMER MESSAGE */
-    let disclaimer_tab = document.getElementById("disclaimer-tab");
-    if(localStorage.getItem("disclaimer") === "true") { disclaimer_tab.style.display = "none"; }
-
-    let understand_btn = document.getElementById("understand-btn");
-    understand_btn.disabled = true;
-
-    setTimeout(() => {
-        understand_btn.classList.add("fadein");
-        understand_btn.style.cursor = "pointer";
-
-        setTimeout(() => { 
-            understand_btn.style.transition = "0.1s"; 
-            understand_btn.classList.remove("noHover");
-            understand_btn.disabled = false;
-        }, 2000);
-    }, 5000);
 }
 
 function readMore(){
