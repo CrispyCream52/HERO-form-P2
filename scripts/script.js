@@ -3,7 +3,7 @@ const isEN = path.includes("/en/");
 let isDarkMode = document.body.classList.contains("dark-mode");
 
 const basePath = path.includes("/HERO-form-P2") ?
-"/HERO-form-P2/" : "/";
+"/MANTLE-original/" : "/";
 
 const homePath = isEN ?
 `${basePath}en/index.html` : `${basePath}pt/index.html`;
@@ -463,12 +463,21 @@ if(path.includes("/contact.html")){
         "Opening your email application." : 
         "Abrindo seu aplicativo de email.";
 
-        submit_btn.addEventListener("click", () => {
-            submit_btn.textContent = isEN ? "EMAIL SENT" : "EMAIL ENVIADO";
-            setTimeout(() => { submit_btn.textContent = isEN ? "SEND" : "ENVIAR"; }, 2000);
-        });
+        submit_btn.textContent = isEN ? "EMAIL SENT" : "EMAIL ENVIADO";
+        setTimeout(() => { submit_btn.textContent = isEN ? "SEND" : "ENVIAR"; }, 2000);
 
         setTimeout(() => { form.submit(); }, 1000);
+
+        /* mailto config */
+        const email_recipient = "crispycreamck@outlook.com";
+        const email_name = document.getElementById("name").value;
+        const email_subject = isEN ? 
+        encodeURIComponent(`MESSAGE FROM ${email_name.toUpperCase()}`):
+        encodeURIComponent(`MENSAGEM DE ${email_name.toUpperCase()}`);
+        const email_cc = document.getElementById("email").value;
+        const email_body = encodeURIComponent(document.getElementById("comment").value);
+
+        form.action = `mailto:${email_recipient}?subject=${email_subject}&cc=${email_cc}&body=${email_body}`;
     });
 
     reset_btn.addEventListener("click", () => { submit_btn.disabled = true });
