@@ -26,6 +26,9 @@ function disclaimerState(){
 if (localStorage.getItem("disclaimer") !== "true" && !isHome) {
     window.location.replace(homePath);
 }
+if(localStorage.setItem("disclaimer") && isHome) {
+    document.getElementById("disclaimer-tab").remove();
+}
 
 /* Som dos botões */
 window.addEventListener("load", () => {
@@ -133,7 +136,7 @@ if(isHome){
     understand_btn.disabled = true;
 
     setTimeout(() => {
-        understand_btn.classList.toggle("fadein");
+        understand_btn.classList.add("fadein");
         understand_btn.style.cursor = "pointer";
 
         setTimeout(() => { 
