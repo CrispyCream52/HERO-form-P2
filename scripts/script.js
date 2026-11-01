@@ -26,7 +26,7 @@ function disclaimerState(){
 if (localStorage.getItem("disclaimer") !== "true" && !isHome) {
     window.location.replace(homePath);
 }
-if(localStorage.setItem("disclaimer") && isHome) {
+if(localStorage.setItem("disclaimer") === "true" && isHome) {
     document.getElementById("disclaimer-tab").remove();
 }
 
