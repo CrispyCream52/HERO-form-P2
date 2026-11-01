@@ -16,7 +16,7 @@ const isHome =
 function disclaimerState(){
     const btn = document.getElementById("understand-btn");
     let disclaimer_msg = document.getElementById("disclaimer-tab");
-    disclaimer_msg.classList.toggle("hide-info");
+    disclaimer_msg.classList.add("hide-info");
     btn.disabled = true;
 
     setTimeout(() => { disclaimer_msg.style.display = "none"; }, 2000);
