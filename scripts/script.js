@@ -16,7 +16,7 @@ const isHome =
 function disclaimerState(){
     const btn = document.getElementById("understand-btn");
     let disclaimer_msg = document.getElementById("disclaimer-tab");
-    disclaimer_msg.classList.add("hide-info");
+    disclaimer_msg.classList.toggle("hide-info");
     btn.disabled = true;
 
     setTimeout(() => { disclaimer_msg.style.display = "none"; }, 2000);
@@ -133,7 +133,7 @@ if(isHome){
     understand_btn.disabled = true;
 
     setTimeout(() => {
-        understand_btn.classList.add("fadein");
+        understand_btn.classList.toggle("fadein");
         understand_btn.style.cursor = "pointer";
 
         setTimeout(() => { 
