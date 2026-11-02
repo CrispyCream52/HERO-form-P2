@@ -64,8 +64,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000);
     }, 5000);
 
-
-
     const hover_snd = document.getElementById("hover-snd");
     const click_snd = document.getElementById("click-snd");
     const noise_snd = document.getElementById("noise-snd");
