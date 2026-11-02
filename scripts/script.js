@@ -2,8 +2,8 @@ const path = window.location.pathname;
 const isEN = path.includes("/en/");
 let isDarkMode = document.body.classList.contains("dark-mode");
 
-const basePath = path.includes("/HERO-form-P2") ?
-"/HERO-form-P2/" : "/";
+const basePath = path.includes("/MANTLE-original") ?
+"/MANTLE-original/" : "/";
 
 const homePath = isEN ?
 `${basePath}en/index.html` : `${basePath}pt/index.html`;
@@ -41,29 +41,6 @@ function DisclaimerCheck(){
 
 /* Som dos botões */
 window.addEventListener("DOMContentLoaded", () => {
-    DisclaimerCheck();
-    const disclaimer = document.getElementById("disclaimer-tab");
-    const understand_btn = document.getElementById("understand-btn");
-
-    if(!disclaimer || !understand_btn) return;
-    if(localStorage.getItem("disclaimer") === "true") {
-        disclaimer.remove();
-        return;
-    }
-
-    understand_btn.disabled = true;
-
-    setTimeout(() => {
-        understand_btn.classList.add("fadein");
-        understand_btn.style.cursor = "pointer";
-
-        setTimeout(() => { 
-            understand_btn.style.transition = "0.1s"; 
-            understand_btn.classList.remove("noHover");
-            understand_btn.disabled = false;
-        }, 2000);
-    }, 5000);
-
     const hover_snd = document.getElementById("hover-snd");
     const click_snd = document.getElementById("click-snd");
     const noise_snd = document.getElementById("noise-snd");
@@ -121,6 +98,29 @@ window.addEventListener("DOMContentLoaded", () => {
             click_snd.play();
         });
     });
+
+    DisclaimerCheck();
+    const disclaimer = document.getElementById("disclaimer-tab");
+    const understand_btn = document.getElementById("understand-btn");
+
+    if(!disclaimer || !understand_btn) return;
+    if(localStorage.getItem("disclaimer") === "true") {
+        disclaimer.remove();
+        return;
+    }
+
+    understand_btn.disabled = true;
+
+    setTimeout(() => {
+        understand_btn.classList.add("fadein");
+        understand_btn.style.cursor = "pointer";
+
+        setTimeout(() => { 
+            understand_btn.style.transition = "0.1s"; 
+            understand_btn.classList.remove("noHover");
+            understand_btn.disabled = false;
+        }, 2000);
+    }, 5000);
 });
 
 function mobileMenu(){
