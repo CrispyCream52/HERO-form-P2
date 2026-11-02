@@ -41,6 +41,13 @@ Em ordem para acessar o protótipo do Figma, você deve fazer upload do arquivo 
 2. via Github
 > Acesse o domínio https://crispycream52.github.io/HERO-form-P2/
 
+## SCREENSHOTS
+<img src="screenshots/pc_disclaimer.PNG">
+<img src="screenshots/pc_home.PNG">
+<img src="screenshots/pc_characters.PNG">
+<img src="screenshots/pc_paige.PNG">
+<img src="screenshots/pc_contact.PNG">
+
 ## DECISÕES UX / UI
 
 Principalmente, por gosto pessoal e pelos visuais simples que o jogo oferece, decidi que o estilo que mais combinaria com meu trabalho seria trabalhar com um design minimalista.
