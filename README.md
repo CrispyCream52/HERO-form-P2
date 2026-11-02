@@ -42,7 +42,11 @@ In order to access the Figma prototype, you must upload the 'mantle.site' file i
 > Access the domain https://crispycream52.github.io/HERO-form-P2/
 
 ## SCREENSHOTS
-
+<img src="screenshots/pc_disclaimer.PNG">
+<img src="screenshots/pc_home.PNG">
+<img src="screenshots/pc_characters.PNG">
+<img src="screenshots/pc_paige.PNG">
+<img src="screenshots/pc_contact.PNG">
 
 ## UX / UI DECISIONS
 
