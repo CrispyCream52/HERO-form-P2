@@ -2,8 +2,8 @@ const path = window.location.pathname;
 const isEN = path.includes("/en/");
 let isDarkMode = document.body.classList.contains("dark-mode");
 
-const basePath = path.includes("/MANTLE-original") ?
-"/MANTLE-original/" : "/";
+const basePath = path.includes("/HERO-form-P2") ?
+"/HERO-form-P2/" : "/";
 
 const homePath = isEN ?
 `${basePath}en/index.html` : `${basePath}pt/index.html`;
